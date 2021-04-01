@@ -28,8 +28,8 @@ library IshikoUUIDs
 
     headers
     {
-        ../../Include/Ishiko/UUID/UUID.h
-        ../../Include/Ishiko/UUID/linkoptions.h
+        ../../Include/Ishiko/UUIDs/UUID.h
+        ../../Include/Ishiko/UUIDs/linkoptions.h
     }
 
     sources

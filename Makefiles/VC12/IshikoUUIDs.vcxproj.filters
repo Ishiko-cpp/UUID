@@ -17,10 +17,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Include\Ishiko\UUID\UUID.h">
+    <ClInclude Include="..\..\Include\Ishiko\UUIDs\UUID.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Include\Ishiko\UUID\linkoptions.h">
+    <ClInclude Include="..\..\Include\Ishiko\UUIDs\linkoptions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

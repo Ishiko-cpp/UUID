@@ -153,8 +153,8 @@
     <ClCompile Include="..\..\Source\UUID.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Include\Ishiko\UUID\UUID.h" />
-    <ClInclude Include="..\..\Include\Ishiko\UUID\linkoptions.h" />
+    <ClInclude Include="..\..\Include\Ishiko\UUIDs\UUID.h" />
+    <ClInclude Include="..\..\Include\Ishiko\UUIDs\linkoptions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
