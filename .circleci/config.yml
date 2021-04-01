@@ -9,3 +9,6 @@ jobs:
           command: mkdir /Ishiko-cpp && echo 'export ISHIKO_CPP="/Ishiko-cpp"' >> $BASH_ENV
       - checkout:
           path: /Ishiko-cpp/UUIDs
+      - run:
+          name: Build
+          command: cd /Ishiko-cpp/UUIDs/Makefiles/GNUmakefile && make
