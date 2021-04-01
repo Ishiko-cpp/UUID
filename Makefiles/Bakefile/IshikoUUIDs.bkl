@@ -1,13 +1,13 @@
 toolsets = gnu vs2017 vs2015 vs2013;
 
 gnu.makefile = ../GNUmakefile/GNUmakefile;
-vs2017.solutionfile = ../VC15/IshikoUUID.sln;
-vs2015.solutionfile = ../VC14/IshikoUUID.sln;
-vs2013.solutionfile = ../VC12/IshikoUUID.sln;
+vs2017.solutionfile = ../VC15/IshikoUUIDs.sln;
+vs2015.solutionfile = ../VC14/IshikoUUIDs.sln;
+vs2013.solutionfile = ../VC12/IshikoUUIDs.sln;
 
-library IshikoUUID
+library IshikoUUIDs
 {
-    includedirs += ../../Include/Ishiko/UUID;
+    includedirs += ../../Include/Ishiko/UUIDs;
 
     if ($(toolset) == gnu)
     {
@@ -23,7 +23,7 @@ library IshikoUUID
 
     if ($(config) == Debug)
     {
-        basename = IshikoUUID-d;
+        basename = IshikoUUIDs-d;
     }
 
     headers
