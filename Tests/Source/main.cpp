@@ -4,13 +4,19 @@
     See https://github.com/Ishiko-cpp/UUIDs/blob/master/LICENSE.txt
 */
 
-#include "Ishiko/TestFramework/TestFrameworkCore.h"
+#include "UUIDTests.h"
+#include "UUIDVersion4GeneratorTests.h"
+#include <Ishiko/TestFramework/TestFrameworkCore.h>
 
 using namespace Ishiko::Tests;
 
 int main(int argc, char* argv[])
 {
     TestHarness theTestHarness("IshikoUUIDs");
+
+    TestSequence& theTests = theTestHarness.tests();
+    theTests.append<UUIDTests>();
+    theTests.append<UUIDVersion4GeneratorTests>();
 
     return theTestHarness.run();
 }

@@ -18,8 +18,16 @@ program IshikoUUIDsTests : IshikoTestFrameworkCore
         libs += IshikoTestFrameworkCore IshikoProcess IshikoErrors boost_filesystem boost_system;
     }
 
+    headers
+    {
+        ../../Source/UUIDTests.h
+        ../../Source/UUIDVersion4GeneratorTests.h
+    }
+
     sources
     {
         ../../Source/main.cpp
+        ../../Source/UUIDTests.cpp
+        ../../Source/UUIDVersion4GeneratorTests.cpp
     }
 }
