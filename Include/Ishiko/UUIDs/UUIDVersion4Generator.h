@@ -8,6 +8,7 @@
 #define _ISHIKO_UUIDS_UUIDVERSION4GENERATOR_H_
 
 #include "UUID.h"
+#include "UUIDGenerator.h"
 #include <boost/uuid/random_generator.hpp>
 
 namespace Ishiko
@@ -15,10 +16,10 @@ namespace Ishiko
 namespace UUIDs
 {
 
-class UUIDVersion4Generator
+class UUIDVersion4Generator : public UUIDGenerator
 {
 public:
-    UUID generate();
+    UUID generate() override;
 
 private:
     boost::uuids::random_generator m_generator;
