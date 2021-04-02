@@ -7,4 +7,28 @@
 #ifndef _ISHIKO_UUIDS_UUID_H_
 #define _ISHIKO_UUIDS_UUID_H_
 
+#include <boost/uuid/uuid.hpp>
+
+namespace Ishiko
+{
+namespace UUIDs
+{
+
+class UUID
+{
+public:
+    UUID();
+    UUID(const boost::uuids::uuid& uuid);
+
+    bool isNil() const noexcept;
+
+private:
+    boost::uuids::uuid m_uuid;
+};
+
+}
+}
+
+#include "linkoptions.h"
+
 #endif

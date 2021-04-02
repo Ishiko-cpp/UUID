@@ -1,0 +1,34 @@
+import ../../../Include/Ishiko/UUIDs.bkl;
+ishikopath = envvar("ISHIKO_CPP");
+import $(ishikopath)/TestFramework/Include/Ishiko/TestFramework/TestFrameworkCore.bkl;
+
+toolsets = gnu vs2017 vs2015 vs2013;
+
+gnu.makefile = ../GNUmakefile/GNUmakefile;
+vs2017.solutionfile = ../VC15/IshikoUUIDsTests.sln;
+vs2015.solutionfile = ../VC14/IshikoUUIDsTests.sln;
+vs2013.solutionfile = ../VC12/IshikoUUUIDsTests.sln;
+
+program IshikoUUIDsTests : IshikoUUIDs, IshikoTestFrameworkCore
+{
+    archs = x86 x86_64;
+
+    if ($(toolset) == gnu)
+    {
+        cxx-compiler-options = "-std=c++11";
+        libs += IshikoUUIDs IshikoTestFrameworkCore IshikoProcess IshikoErrors boost_filesystem boost_system;
+    }
+
+    headers
+    {
+        ../../Source/UUIDTests.h
+        ../../Source/UUIDVersion4GeneratorTests.h
+    }
+
+    sources
+    {
+        ../../Source/main.cpp
+        ../../Source/UUIDTests.cpp
+        ../../Source/UUIDVersion4GeneratorTests.cpp
+    }
+}
