@@ -33,6 +33,11 @@ override CXXFLAGS += -O2
 else ifneq (,$(config))
 $(warning Unknown configuration "$(config)")
 endif
+#
+# Additionally, this makefile is customizable with the following
+# settings:
+#
+#      BOOST_ROOT  Path to the Boost installation
 
 # Use "make RANLIB=''" for platforms without ranlib.
 RANLIB ?= ranlib
@@ -54,6 +59,16 @@ _builddir := $(if $(findstring $(abspath $(builddir)),$(builddir)),,../../)$(bui
 _builddir_error := $(shell mkdir -p $(_builddir) 2>&1)
 $(if $(_builddir_error),$(error Failed to create build directory: $(_builddir_error)))
 endif
+
+# ------------
+# Configurable settings:
+# 
+
+# Path to the Boost installation
+BOOST_ROOT ?= $(BOOST)
+
+# ------------
+
 all: ../Bakefile/../../Lib/lib$(if $(call _equal,$(config),Debug),IshikoUUIDs-d,IshikoUUIDs).a
 
 ../Bakefile/../../Lib/lib$(if $(call _equal,$(config),Debug),IshikoUUIDs-d,IshikoUUIDs).a: $(_builddir)IshikoUUIDs_UUID.o $(_builddir)IshikoUUIDs_UUIDVersion4Generator.o
@@ -61,10 +76,10 @@ all: ../Bakefile/../../Lib/lib$(if $(call _equal,$(config),Debug),IshikoUUIDs-d,
 	$(RANLIB) $@
 
 $(_builddir)IshikoUUIDs_UUID.o: ../../Source/UUID.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I../../Include/Ishiko/UUIDs -std=c++11 ../../Source/UUID.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(BOOST_ROOT)/include -I../../Include/Ishiko/UUIDs -std=c++11 ../../Source/UUID.cpp
 
 $(_builddir)IshikoUUIDs_UUIDVersion4Generator.o: ../../Source/UUIDVersion4Generator.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I../../Include/Ishiko/UUIDs -std=c++11 ../../Source/UUIDVersion4Generator.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(BOOST_ROOT)/include -I../../Include/Ishiko/UUIDs -std=c++11 ../../Source/UUIDVersion4Generator.cpp
 
 clean:
 	rm -f $(_builddir)*.o

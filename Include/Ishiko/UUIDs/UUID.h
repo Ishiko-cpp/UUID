@@ -7,6 +7,8 @@
 #ifndef _ISHIKO_UUIDS_UUID_H_
 #define _ISHIKO_UUIDS_UUID_H_
 
+#include <boost/uuid/uuid.hpp>
+
 namespace Ishiko
 {
 namespace UUIDs
@@ -14,6 +16,13 @@ namespace UUIDs
 
 class UUID
 {
+public:
+    UUID();
+
+    bool isNil() const noexcept;
+
+private:
+    boost::uuids::uuid m_uuid;
 };
 
 }

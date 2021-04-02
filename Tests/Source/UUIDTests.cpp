@@ -20,5 +20,6 @@ void UUIDTests::ConstructorTest1(Test& test)
 {
     UUID uuid;
 
+    ISHTF_FAIL_IF_NOT(uuid.isNil());
     ISHTF_PASS();
 }
