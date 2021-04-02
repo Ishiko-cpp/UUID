@@ -5,8 +5,10 @@
 */
 
 #include "UUIDTests.h"
+#include "Ishiko/UUIDs/UUID.h"
 
 using namespace Ishiko::Tests;
+using namespace Ishiko::UUIDs;
 
 UUIDTests::UUIDTests(const TestNumber& number, const TestEnvironment& environment)
     : TestSequence(number, "UUID tests", environment)
@@ -16,4 +18,7 @@ UUIDTests::UUIDTests(const TestNumber& number, const TestEnvironment& environmen
 
 void UUIDTests::ConstructorTest1(Test& test)
 {
+    UUID uuid;
+
+    ISHTF_PASS();
 }

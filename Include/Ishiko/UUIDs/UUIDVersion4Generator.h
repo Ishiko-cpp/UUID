@@ -7,4 +7,18 @@
 #ifndef _ISHIKO_UUIDS_UUIDVERSION4GENERATOR_H_
 #define _ISHIKO_UUIDS_UUIDVERSION4GENERATOR_H_
 
+namespace Ishiko
+{
+namespace UUIDs
+{
+
+class UUIDVersion4Generator
+{
+};
+
+}
+}
+
+#include "linkoptions.h"
+
 #endif

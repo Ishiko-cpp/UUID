@@ -4,20 +4,11 @@
     See https://github.com/Ishiko-cpp/UUIDs/blob/master/LICENSE.txt
 */
 
-#ifndef _ISHIKO_UUIDS_UUID_H_
-#define _ISHIKO_UUIDS_UUID_H_
+#ifndef _ISHIKO_UUIDS_H_
+#define _ISHIKO_UUIDS_H_
 
-namespace Ishiko
-{
-namespace UUIDs
-{
-
-class UUID
-{
-};
-
-}
-}
+#include "UUIDs/UUID.h"
+#include "UUIDs/UUIDVersion4Generator.h"
 
 #include "linkoptions.h"
 

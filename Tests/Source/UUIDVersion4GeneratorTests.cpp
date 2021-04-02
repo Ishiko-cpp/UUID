@@ -5,8 +5,10 @@
 */
 
 #include "UUIDVersion4GeneratorTests.h"
+#include "Ishiko/UUIDs/UUIDVersion4Generator.h"
 
 using namespace Ishiko::Tests;
+using namespace Ishiko::UUIDs;
 
 UUIDVersion4GeneratorTests::UUIDVersion4GeneratorTests(const TestNumber& number, const TestEnvironment& environment)
     : TestSequence(number, "UUIDVersion4Generator tests", environment)
@@ -16,4 +18,7 @@ UUIDVersion4GeneratorTests::UUIDVersion4GeneratorTests(const TestNumber& number,
 
 void UUIDVersion4GeneratorTests::ConstructorTest1(Test& test)
 {
+    UUIDVersion4Generator generator;
+
+    ISHTF_PASS();
 }
