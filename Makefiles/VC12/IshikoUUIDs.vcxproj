@@ -156,6 +156,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\Include\Ishiko\UUIDs.h" />
     <ClInclude Include="..\..\Include\Ishiko\UUIDs\UUID.h" />
+    <ClInclude Include="..\..\Include\Ishiko\UUIDs\UUIDGenerator.h" />
     <ClInclude Include="..\..\Include\Ishiko\UUIDs\UUIDVersion4Generator.h" />
     <ClInclude Include="..\..\Include\Ishiko\UUIDs\linkoptions.h" />
   </ItemGroup>

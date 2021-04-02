@@ -23,6 +23,9 @@
     <ClInclude Include="..\..\Include\Ishiko\UUIDs\UUID.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Include\Ishiko\UUIDs\UUIDGenerator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Include\Ishiko\UUIDs\UUIDVersion4Generator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
