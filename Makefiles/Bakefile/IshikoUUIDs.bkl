@@ -29,11 +29,13 @@ library IshikoUUIDs
     headers
     {
         ../../Include/Ishiko/UUIDs/UUID.h
+        ../../Include/Ishiko/UUIDs/UUIDVersion4Generator.h
         ../../Include/Ishiko/UUIDs/linkoptions.h
     }
 
     sources
     {
         ../../Source/UUID.cpp
+        ../../Source/UUIDVersion4Generator.cpp
     }
 }

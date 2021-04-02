@@ -20,12 +20,18 @@
     <ClInclude Include="..\..\Include\Ishiko\UUIDs\UUID.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Include\Ishiko\UUIDs\UUIDVersion4Generator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Include\Ishiko\UUIDs\linkoptions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\UUID.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\UUIDVersion4Generator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
