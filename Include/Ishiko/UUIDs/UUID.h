@@ -18,6 +18,7 @@ class UUID
 {
 public:
     UUID();
+    UUID(const boost::uuids::uuid& uuid);
 
     bool isNil() const noexcept;
 

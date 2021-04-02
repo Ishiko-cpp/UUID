@@ -5,3 +5,16 @@
 */
 
 #include "UUIDVersion4Generator.h"
+
+namespace Ishiko
+{
+namespace UUIDs
+{
+
+UUID UUIDVersion4Generator::generate()
+{
+    return m_generator();
+}
+
+}
+}

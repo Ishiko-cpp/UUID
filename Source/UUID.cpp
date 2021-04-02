@@ -17,6 +17,11 @@ UUID::UUID()
 {
 }
 
+UUID::UUID(const boost::uuids::uuid& uuid)
+    : m_uuid(uuid)
+{
+}
+
 bool UUID::isNil() const noexcept
 {
     return m_uuid.is_nil();

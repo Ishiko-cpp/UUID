@@ -14,11 +14,22 @@ UUIDVersion4GeneratorTests::UUIDVersion4GeneratorTests(const TestNumber& number,
     : TestSequence(number, "UUIDVersion4Generator tests", environment)
 {
     append<HeapAllocationErrorsTest>("Constructor test 1", ConstructorTest1);
+    append<HeapAllocationErrorsTest>("generate test 1", GenerateTest1);
 }
 
 void UUIDVersion4GeneratorTests::ConstructorTest1(Test& test)
 {
     UUIDVersion4Generator generator;
 
+    ISHTF_PASS();
+}
+
+void UUIDVersion4GeneratorTests::GenerateTest1(Test& test)
+{
+    UUIDVersion4Generator generator;
+
+    UUID uuid = generator.generate();
+
+    ISHTF_FAIL_IF(uuid.isNil());
     ISHTF_PASS();
 }
