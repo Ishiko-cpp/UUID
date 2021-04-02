@@ -8,6 +8,7 @@
 #define _ISHIKO_UUIDS_UUID_H_
 
 #include <boost/uuid/uuid.hpp>
+#include <string>
 
 namespace Ishiko
 {
@@ -19,8 +20,11 @@ class UUID
 public:
     UUID();
     UUID(const boost::uuids::uuid& uuid);
+    UUID(const std::string& uuid);
 
     bool isNil() const noexcept;
+
+    std::string toString();
 
 private:
     boost::uuids::uuid m_uuid;
