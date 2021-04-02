@@ -1,0 +1,20 @@
+setting ISHIKO_CPP_UUIDS_ROOT
+{
+    help = "Path to the Ishiko Types installation";
+    default = '$(ISHIKO_CPP)/UUIDs';
+}
+
+template IshikoUUIDs
+{
+    includedirs += $(ISHIKO_CPP_UUIDS_ROOT)/Include;
+
+    if ($(toolset) == gnu)
+    {
+        libdirs += $(ISHIKO_CPP_UUIDS_ROOT)/Lib;
+    }
+
+    if ($(toolset) != gnu)
+    {
+        libdirs += $(ISHIKO_CPP_UUIDS_ROOT)/Lib/$(arch);
+    }
+}

@@ -5,3 +5,39 @@
 */
 
 #include "UUID.h"
+#include <boost/uuid/nil_generator.hpp>
+#include <boost/uuid/string_generator.hpp>
+#include <boost/uuid/uuid_io.hpp>
+
+namespace Ishiko
+{
+namespace UUIDs
+{
+
+UUID::UUID()
+    : m_uuid(boost::uuids::nil_uuid())
+{
+}
+
+UUID::UUID(const boost::uuids::uuid& uuid)
+    : m_uuid(uuid)
+{
+}
+
+UUID::UUID(const std::string& uuid)
+    : m_uuid(boost::uuids::string_generator()(uuid))
+{
+}
+
+bool UUID::isNil() const noexcept
+{
+    return m_uuid.is_nil();
+}
+
+std::string UUID::toString()
+{
+    return boost::uuids::to_string(m_uuid);
+}
+
+}
+}
