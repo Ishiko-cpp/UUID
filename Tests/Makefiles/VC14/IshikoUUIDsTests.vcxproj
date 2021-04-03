@@ -155,10 +155,12 @@
     <ClCompile Include="..\..\Source\main.cpp" />
     <ClCompile Include="..\..\Source\UUIDTests.cpp" />
     <ClCompile Include="..\..\Source\UUIDVersion4GeneratorTests.cpp" />
+    <ClCompile Include="..\..\Source\PrecomputedUUIDGeneratorTests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\UUIDTests.h" />
     <ClInclude Include="..\..\Source\UUIDVersion4GeneratorTests.h" />
+    <ClInclude Include="..\..\Source\PrecomputedUUIDGeneratorTests.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

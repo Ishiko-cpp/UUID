@@ -150,14 +150,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\ErrorCategory.cpp" />
     <ClCompile Include="..\..\Source\UUID.cpp" />
     <ClCompile Include="..\..\Source\UUIDVersion4Generator.cpp" />
+    <ClCompile Include="..\..\Source\PrecomputedUUIDGenerator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Include\Ishiko\UUIDs.h" />
+    <ClInclude Include="..\..\Include\Ishiko\UUIDs\ErrorCategory.h" />
     <ClInclude Include="..\..\Include\Ishiko\UUIDs\UUID.h" />
     <ClInclude Include="..\..\Include\Ishiko\UUIDs\UUIDGenerator.h" />
     <ClInclude Include="..\..\Include\Ishiko\UUIDs\UUIDVersion4Generator.h" />
+    <ClInclude Include="..\..\Include\Ishiko\UUIDs\PrecomputedUUIDGenerator.h" />
     <ClInclude Include="..\..\Include\Ishiko\UUIDs\linkoptions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

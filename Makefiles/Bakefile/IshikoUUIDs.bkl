@@ -33,15 +33,19 @@ library IshikoUUIDs : Boost
     {
         ../../Include/Ishiko/UUIDs.h
 
+        ../../Include/Ishiko/UUIDs/ErrorCategory.h
         ../../Include/Ishiko/UUIDs/UUID.h
         ../../Include/Ishiko/UUIDs/UUIDGenerator.h
         ../../Include/Ishiko/UUIDs/UUIDVersion4Generator.h
+        ../../Include/Ishiko/UUIDs/PrecomputedUUIDGenerator.h
         ../../Include/Ishiko/UUIDs/linkoptions.h
     }
 
     sources
     {
+        ../../Source/ErrorCategory.cpp
         ../../Source/UUID.cpp
         ../../Source/UUIDVersion4Generator.cpp
+        ../../Source/PrecomputedUUIDGenerator.cpp
     }
 }
