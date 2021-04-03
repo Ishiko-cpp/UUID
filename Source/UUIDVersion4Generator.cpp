@@ -11,7 +11,7 @@ namespace Ishiko
 namespace UUIDs
 {
 
-UUID UUIDVersion4Generator::generate()
+UUID UUIDVersion4Generator::generate(Error& error)
 {
     return m_generator();
 }

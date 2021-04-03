@@ -6,7 +6,9 @@
 
 #include "UUIDVersion4GeneratorTests.h"
 #include "Ishiko/UUIDs/UUIDVersion4Generator.h"
+#include <Ishiko/Errors/Error.h>
 
+using namespace Ishiko;
 using namespace Ishiko::Tests;
 using namespace Ishiko::UUIDs;
 
@@ -28,8 +30,10 @@ void UUIDVersion4GeneratorTests::GenerateTest1(Test& test)
 {
     UUIDVersion4Generator generator;
 
-    UUID uuid = generator.generate();
+    Error error;
+    UUID uuid = generator.generate(error);
 
+    ISHTF_FAIL_IF(error);
     ISHTF_FAIL_IF(uuid.isNil());
     ISHTF_PASS();
 }

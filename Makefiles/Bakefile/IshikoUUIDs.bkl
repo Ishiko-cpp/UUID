@@ -1,4 +1,5 @@
 ishikopath = envvar("ISHIKO_CPP");
+import $(ishikopath)/Errors/Include/Ishiko/Errors.bkl;
 import $(ishikopath)/ThirdPartyGlue/Include/Ishiko/Boost.bkl;
 
 toolsets = gnu vs2017 vs2015 vs2013;
@@ -8,7 +9,7 @@ vs2017.solutionfile = ../VC15/IshikoUUIDs.sln;
 vs2015.solutionfile = ../VC14/IshikoUUIDs.sln;
 vs2013.solutionfile = ../VC12/IshikoUUIDs.sln;
 
-library IshikoUUIDs : Boost
+library IshikoUUIDs : IshikoErrors, Boost
 {
     includedirs += ../../Include/Ishiko/UUIDs;
 
@@ -33,15 +34,19 @@ library IshikoUUIDs : Boost
     {
         ../../Include/Ishiko/UUIDs.h
 
+        ../../Include/Ishiko/UUIDs/ErrorCategory.h
         ../../Include/Ishiko/UUIDs/UUID.h
         ../../Include/Ishiko/UUIDs/UUIDGenerator.h
         ../../Include/Ishiko/UUIDs/UUIDVersion4Generator.h
+        ../../Include/Ishiko/UUIDs/PrecomputedUUIDGenerator.h
         ../../Include/Ishiko/UUIDs/linkoptions.h
     }
 
     sources
     {
+        ../../Source/ErrorCategory.cpp
         ../../Source/UUID.cpp
         ../../Source/UUIDVersion4Generator.cpp
+        ../../Source/PrecomputedUUIDGenerator.cpp
     }
 }

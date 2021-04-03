@@ -23,6 +23,7 @@ program IshikoUUIDsTests : IshikoUUIDs, IshikoTestFrameworkCore
     {
         ../../Source/UUIDTests.h
         ../../Source/UUIDVersion4GeneratorTests.h
+        ../../Source/PrecomputedUUIDGeneratorTests.h
     }
 
     sources
@@ -30,5 +31,6 @@ program IshikoUUIDsTests : IshikoUUIDs, IshikoTestFrameworkCore
         ../../Source/main.cpp
         ../../Source/UUIDTests.cpp
         ../../Source/UUIDVersion4GeneratorTests.cpp
+        ../../Source/PrecomputedUUIDGeneratorTests.cpp
     }
 }
