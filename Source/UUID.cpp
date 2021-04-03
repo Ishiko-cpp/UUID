@@ -39,7 +39,17 @@ bool UUID::isNil() const noexcept
     return m_uuid.is_nil();
 }
 
-std::string UUID::toString()
+bool UUID::operator==(const UUID& other) const
+{
+    return (m_uuid == other.m_uuid);
+}
+
+bool UUID::operator!=(const UUID& other) const
+{
+    return (m_uuid != other.m_uuid);
+}
+
+std::string UUID::toString() const
 {
     return boost::uuids::to_string(m_uuid);
 }
