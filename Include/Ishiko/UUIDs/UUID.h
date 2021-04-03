@@ -25,7 +25,10 @@ public:
 
     bool isNil() const noexcept;
 
-    std::string toString();
+    bool operator==(const UUID& other) const;
+    bool operator!=(const UUID& other) const;
+
+    std::string toString() const;
 
 private:
     boost::uuids::uuid m_uuid;

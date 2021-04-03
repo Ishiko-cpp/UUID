@@ -19,6 +19,12 @@ private:
     static void ConstructorTest2(Ishiko::Tests::Test& test);
     static void ConstructorTest3(Ishiko::Tests::Test& test);
     static void ConstructorTest4(Ishiko::Tests::Test& test);
+    static void EqualToTest1(Ishiko::Tests::Test& test);
+    static void EqualToTest2(Ishiko::Tests::Test& test);
+    static void NotEqualToTest1(Ishiko::Tests::Test& test);
+    static void NotEqualToTest2(Ishiko::Tests::Test& test);
+    static void ToStringTest1(Ishiko::Tests::Test& test);
+    static void ToStringTest2(Ishiko::Tests::Test& test);
 };
 
 #endif

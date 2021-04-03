@@ -20,6 +20,12 @@ UUIDTests::UUIDTests(const TestNumber& number, const TestEnvironment& environmen
     append<HeapAllocationErrorsTest>("Constructor test 2", ConstructorTest2);
     append<HeapAllocationErrorsTest>("Constructor test 3", ConstructorTest3);
     append<HeapAllocationErrorsTest>("Constructor test 4", ConstructorTest4);
+    append<HeapAllocationErrorsTest>("operator== test 1", EqualToTest1);
+    append<HeapAllocationErrorsTest>("operator== test 2", EqualToTest2);
+    append<HeapAllocationErrorsTest>("operator!= test 1", NotEqualToTest1);
+    append<HeapAllocationErrorsTest>("operator!= test 2", NotEqualToTest2);
+    append<HeapAllocationErrorsTest>("toString test 1", ToStringTest1);
+    append<HeapAllocationErrorsTest>("toString test 2", ToStringTest2);
 }
 
 void UUIDTests::ConstructorTest1(Test& test)
@@ -49,6 +55,58 @@ void UUIDTests::ConstructorTest3(Test& test)
 }
 
 void UUIDTests::ConstructorTest4(Test& test)
+{
+    UUID uuid("6ba7b810-9dad-11d1-80b4-00c04fd430c8");
+
+    ISHTF_FAIL_IF_NEQ(uuid.toString(), "6ba7b810-9dad-11d1-80b4-00c04fd430c8");
+    ISHTF_PASS();
+}
+
+void UUIDTests::EqualToTest1(Test& test)
+{
+    UUID uuid1("6ba7b810-9dad-11d1-80b4-00c04fd430c8");
+    UUID uuid2("6ba7b810-9dad-11d1-80b4-00c04fd430c8");
+    
+    ISHTF_FAIL_IF_NOT(uuid1 == uuid2);
+    ISHTF_PASS();
+}
+
+void UUIDTests::EqualToTest2(Test& test)
+{
+    UUID uuid1("6ba7b810-9dad-11d1-80b4-00c04fd430c8");
+    UUID uuid2("6ba7b810-9dad-11d1-80b4-00c04fd430c9");
+
+    ISHTF_FAIL_IF(uuid1 == uuid2);
+    ISHTF_PASS();
+}
+
+void UUIDTests::NotEqualToTest1(Test& test)
+{
+    UUID uuid1("6ba7b810-9dad-11d1-80b4-00c04fd430c8");
+    UUID uuid2("6ba7b810-9dad-11d1-80b4-00c04fd430c8");
+
+    ISHTF_FAIL_IF(uuid1 != uuid2);
+    ISHTF_PASS();
+}
+
+void UUIDTests::NotEqualToTest2(Test& test)
+{
+    UUID uuid1("6ba7b810-9dad-11d1-80b4-00c04fd430c8");
+    UUID uuid2("6ba7b810-9dad-11d1-80b4-00c04fd430c9");
+
+    ISHTF_FAIL_IF_NOT(uuid1 != uuid2);
+    ISHTF_PASS();
+}
+
+void UUIDTests::ToStringTest1(Test& test)
+{
+    UUID uuid;
+    
+    ISHTF_FAIL_IF_NEQ(uuid.toString(), "00000000-0000-0000-0000-000000000000");
+    ISHTF_PASS();
+}
+
+void UUIDTests::ToStringTest2(Test& test)
 {
     UUID uuid("6ba7b810-9dad-11d1-80b4-00c04fd430c8");
 
