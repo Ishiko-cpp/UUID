@@ -6,6 +6,7 @@
 
 #include "UUIDTests.h"
 #include "UUIDVersion4GeneratorTests.h"
+#include "PrecomputedUUIDGeneratorTests.h"
 #include <Ishiko/TestFramework/TestFrameworkCore.h>
 
 using namespace Ishiko::Tests;
@@ -17,6 +18,7 @@ int main(int argc, char* argv[])
     TestSequence& theTests = theTestHarness.tests();
     theTests.append<UUIDTests>();
     theTests.append<UUIDVersion4GeneratorTests>();
+    theTests.append<PrecomputedUUIDGeneratorTests>();
 
     return theTestHarness.run();
 }

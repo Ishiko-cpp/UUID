@@ -8,6 +8,7 @@
 #define _ISHIKO_UUIDS_UUIDGENERATOR_H_
 
 #include "UUID.h"
+#include <Ishiko/Errors/Error.h>
 
 namespace Ishiko
 {
@@ -17,7 +18,7 @@ namespace UUIDs
 class UUIDGenerator
 {
 public:
-    virtual UUID generate() = 0;
+    virtual UUID generate(Error& error) = 0;
 };
 
 }

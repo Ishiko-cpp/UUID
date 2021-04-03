@@ -19,6 +19,7 @@ UUIDTests::UUIDTests(const TestNumber& number, const TestEnvironment& environmen
     append<HeapAllocationErrorsTest>("Constructor test 1", ConstructorTest1);
     append<HeapAllocationErrorsTest>("Constructor test 2", ConstructorTest2);
     append<HeapAllocationErrorsTest>("Constructor test 3", ConstructorTest3);
+    append<HeapAllocationErrorsTest>("Constructor test 4", ConstructorTest4);
 }
 
 void UUIDTests::ConstructorTest1(Test& test)
@@ -39,6 +40,15 @@ void UUIDTests::ConstructorTest2(Test& test)
 }
 
 void UUIDTests::ConstructorTest3(Test& test)
+{
+    std::string string = "6ba7b810-9dad-11d1-80b4-00c04fd430c8";
+    UUID uuid(string);
+
+    ISHTF_FAIL_IF_NEQ(uuid.toString(), "6ba7b810-9dad-11d1-80b4-00c04fd430c8");
+    ISHTF_PASS();
+}
+
+void UUIDTests::ConstructorTest4(Test& test)
 {
     UUID uuid("6ba7b810-9dad-11d1-80b4-00c04fd430c8");
 

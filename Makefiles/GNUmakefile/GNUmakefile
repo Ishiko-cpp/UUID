@@ -37,7 +37,8 @@ endif
 # Additionally, this makefile is customizable with the following
 # settings:
 #
-#      BOOST_ROOT  Path to the Boost installation
+#      ISHIKO_CPP_ERRORS_ROOT  Path to the Ishiko Errors installation
+#      BOOST_ROOT              Path to the Boost installation
 
 # Use "make RANLIB=''" for platforms without ranlib.
 RANLIB ?= ranlib
@@ -64,6 +65,8 @@ endif
 # Configurable settings:
 # 
 
+# Path to the Ishiko Errors installation
+ISHIKO_CPP_ERRORS_ROOT ?= $(ISHIKO_CPP)/Errors
 # Path to the Boost installation
 BOOST_ROOT ?= $(BOOST)
 
@@ -71,15 +74,21 @@ BOOST_ROOT ?= $(BOOST)
 
 all: ../Bakefile/../../Lib/lib$(if $(call _equal,$(config),Debug),IshikoUUIDs-d,IshikoUUIDs).a
 
-../Bakefile/../../Lib/lib$(if $(call _equal,$(config),Debug),IshikoUUIDs-d,IshikoUUIDs).a: $(_builddir)IshikoUUIDs_UUID.o $(_builddir)IshikoUUIDs_UUIDVersion4Generator.o
-	$(AR) rc $@ $(_builddir)IshikoUUIDs_UUID.o $(_builddir)IshikoUUIDs_UUIDVersion4Generator.o
+../Bakefile/../../Lib/lib$(if $(call _equal,$(config),Debug),IshikoUUIDs-d,IshikoUUIDs).a: $(_builddir)IshikoUUIDs_ErrorCategory.o $(_builddir)IshikoUUIDs_UUID.o $(_builddir)IshikoUUIDs_UUIDVersion4Generator.o $(_builddir)IshikoUUIDs_PrecomputedUUIDGenerator.o
+	$(AR) rc $@ $(_builddir)IshikoUUIDs_ErrorCategory.o $(_builddir)IshikoUUIDs_UUID.o $(_builddir)IshikoUUIDs_UUIDVersion4Generator.o $(_builddir)IshikoUUIDs_PrecomputedUUIDGenerator.o
 	$(RANLIB) $@
 
+$(_builddir)IshikoUUIDs_ErrorCategory.o: ../../Source/ErrorCategory.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_ERRORS_ROOT)/Include -I$(BOOST_ROOT)/include -I../../Include/Ishiko/UUIDs -std=c++11 ../../Source/ErrorCategory.cpp
+
 $(_builddir)IshikoUUIDs_UUID.o: ../../Source/UUID.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(BOOST_ROOT)/include -I../../Include/Ishiko/UUIDs -std=c++11 ../../Source/UUID.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_ERRORS_ROOT)/Include -I$(BOOST_ROOT)/include -I../../Include/Ishiko/UUIDs -std=c++11 ../../Source/UUID.cpp
 
 $(_builddir)IshikoUUIDs_UUIDVersion4Generator.o: ../../Source/UUIDVersion4Generator.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(BOOST_ROOT)/include -I../../Include/Ishiko/UUIDs -std=c++11 ../../Source/UUIDVersion4Generator.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_ERRORS_ROOT)/Include -I$(BOOST_ROOT)/include -I../../Include/Ishiko/UUIDs -std=c++11 ../../Source/UUIDVersion4Generator.cpp
+
+$(_builddir)IshikoUUIDs_PrecomputedUUIDGenerator.o: ../../Source/PrecomputedUUIDGenerator.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_ERRORS_ROOT)/Include -I$(BOOST_ROOT)/include -I../../Include/Ishiko/UUIDs -std=c++11 ../../Source/PrecomputedUUIDGenerator.cpp
 
 clean:
 	rm -f $(_builddir)*.o

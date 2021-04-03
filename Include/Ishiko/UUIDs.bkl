@@ -1,10 +1,13 @@
+ishikopath = envvar("ISHIKO_CPP");
+import $(ishikopath)/Errors/Include/Ishiko/Errors.bkl;
+
 setting ISHIKO_CPP_UUIDS_ROOT
 {
     help = "Path to the Ishiko Types installation";
     default = '$(ISHIKO_CPP)/UUIDs';
 }
 
-template IshikoUUIDs
+template IshikoUUIDs : IshikoErrors
 {
     includedirs += $(ISHIKO_CPP_UUIDS_ROOT)/Include;
 
