@@ -29,6 +29,11 @@ UUID::UUID(const std::string& uuid)
 {
 }
 
+UUID::UUID(const char* uuid)
+    : m_uuid(boost::uuids::string_generator()(uuid))
+{
+}
+
 bool UUID::isNil() const noexcept
 {
     return m_uuid.is_nil();
