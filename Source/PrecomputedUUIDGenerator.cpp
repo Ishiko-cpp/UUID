@@ -5,11 +5,17 @@
 */
 
 #include "PrecomputedUUIDGenerator.h"
+#include "ErrorCategory.h"
 
 namespace Ishiko
 {
 namespace UUIDs
 {
+
+PrecomputedUUIDGenerator::PrecomputedUUIDGenerator()
+    : m_index(0)
+{
+}
 
 PrecomputedUUIDGenerator::PrecomputedUUIDGenerator(const std::vector<UUID>& uuids)
     : m_uuids(uuids), m_index(0)
@@ -23,7 +29,15 @@ PrecomputedUUIDGenerator::PrecomputedUUIDGenerator(std::initializer_list<UUID> u
 
 UUID PrecomputedUUIDGenerator::generate(Error& error)
 {
-    return m_uuids[m_index++];
+    if (m_index == m_uuids.size())
+    {
+        Fail(error, ErrorCategory::ePrecomputedUUIDListExhausted);
+        return UUID();
+    }
+    else
+    {
+        return m_uuids[m_index++];
+    }
 }
 
 }

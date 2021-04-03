@@ -19,6 +19,8 @@ PrecomputedUUIDGeneratorTests::PrecomputedUUIDGeneratorTests(const TestNumber& n
     append<HeapAllocationErrorsTest>("Constructor test 1", ConstructorTest1);
     append<HeapAllocationErrorsTest>("Constructor test 2", ConstructorTest2);
     append<HeapAllocationErrorsTest>("generate test 1", GenerateTest1);
+    append<HeapAllocationErrorsTest>("generate test 2", GenerateTest2);
+    append<HeapAllocationErrorsTest>("generate test 3", GenerateTest3);
 }
 
 void PrecomputedUUIDGeneratorTests::ConstructorTest1(Test& test)
@@ -38,12 +40,54 @@ void PrecomputedUUIDGeneratorTests::ConstructorTest2(Test& test)
 
 void PrecomputedUUIDGeneratorTests::GenerateTest1(Test& test)
 {
-    PrecomputedUUIDGenerator generator({"6ba7b810-9dad-11d1-80b4-00c04fd430c8"});
+    PrecomputedUUIDGenerator generator;
 
     Error error;
     UUID uuid = generator.generate(error);
 
+    ISHTF_FAIL_IF_NOT(error);
+    ISHTF_FAIL_IF_NOT(uuid.isNil());
+    ISHTF_PASS();
+}
+
+void PrecomputedUUIDGeneratorTests::GenerateTest2(Test& test)
+{
+    PrecomputedUUIDGenerator generator({"6ba7b810-9dad-11d1-80b4-00c04fd430c8"});
+
+    Error error;
+    UUID uuid1 = generator.generate(error);
+
     ISHTF_FAIL_IF(error);
-    ISHTF_FAIL_IF_NEQ(uuid.toString(), "6ba7b810-9dad-11d1-80b4-00c04fd430c8");
+    ISHTF_FAIL_IF_NEQ(uuid1.toString(), "6ba7b810-9dad-11d1-80b4-00c04fd430c8");
+
+    UUID uuid2 = generator.generate(error);
+    
+    ISHTF_FAIL_IF_NOT(error);
+    ISHTF_FAIL_IF_NOT(uuid2.isNil());
+
+    ISHTF_PASS();
+}
+
+void PrecomputedUUIDGeneratorTests::GenerateTest3(Test& test)
+{
+    PrecomputedUUIDGenerator generator(
+        {"6ba7b810-9dad-11d1-80b4-00c04fd430c8", "6ba7b810-9dad-11d1-80b4-00c04fd430c9" });
+
+    Error error;
+    UUID uuid1 = generator.generate(error);
+
+    ISHTF_FAIL_IF(error);
+    ISHTF_FAIL_IF_NEQ(uuid1.toString(), "6ba7b810-9dad-11d1-80b4-00c04fd430c8");
+
+    UUID uuid2 = generator.generate(error);
+
+    ISHTF_FAIL_IF(error);
+    ISHTF_FAIL_IF_NEQ(uuid2.toString(), "6ba7b810-9dad-11d1-80b4-00c04fd430c9");
+
+    UUID uuid3 = generator.generate(error);
+
+    ISHTF_FAIL_IF_NOT(error);
+    ISHTF_FAIL_IF_NOT(uuid3.isNil());
+
     ISHTF_PASS();
 }

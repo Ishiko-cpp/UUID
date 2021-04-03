@@ -20,6 +20,7 @@ namespace UUIDs
 class PrecomputedUUIDGenerator : public UUIDGenerator
 {
 public:
+    PrecomputedUUIDGenerator();
     PrecomputedUUIDGenerator(const std::vector<UUID>& uuids);
     PrecomputedUUIDGenerator(std::initializer_list<UUID> uuids);
 

@@ -20,7 +20,8 @@ class ErrorCategory : public Ishiko::ErrorCategory
 public:
     enum EErrorValues
     {
-        eGeneric = -1
+        eGeneric = -1,
+        ePrecomputedUUIDListExhausted = -2
     };
 
     static const ErrorCategory& Get() noexcept;
