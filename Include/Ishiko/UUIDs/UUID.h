@@ -21,6 +21,7 @@ public:
     UUID();
     UUID(const boost::uuids::uuid& uuid);
     UUID(const std::string& uuid);
+    UUID(const char* uuid);
 
     bool isNil() const noexcept;
 
