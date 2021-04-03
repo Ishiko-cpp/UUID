@@ -8,6 +8,7 @@
 #define _ISHIKO_UUIDS_UUID_H_
 
 #include <boost/uuid/uuid.hpp>
+#include <ostream>
 #include <string>
 
 namespace Ishiko
@@ -33,6 +34,8 @@ public:
 private:
     boost::uuids::uuid m_uuid;
 };
+
+std::ostream& operator<<(std::ostream& os, const UUID& uuid);
 
 }
 }

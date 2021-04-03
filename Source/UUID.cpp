@@ -54,5 +54,11 @@ std::string UUID::toString() const
     return boost::uuids::to_string(m_uuid);
 }
 
+std::ostream& operator<<(std::ostream& os, const UUID& uuid)
+{
+    os << uuid.toString();
+    return os;
+}
+
 }
 }

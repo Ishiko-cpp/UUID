@@ -9,6 +9,7 @@
 #include <boost/uuid/uuid.hpp>
 #include <boost/uuid/random_generator.hpp>
 #include <boost/uuid/uuid_io.hpp>
+#include <sstream>
 
 using namespace Ishiko::Tests;
 using namespace Ishiko::UUIDs;
@@ -20,12 +21,13 @@ UUIDTests::UUIDTests(const TestNumber& number, const TestEnvironment& environmen
     append<HeapAllocationErrorsTest>("Constructor test 2", ConstructorTest2);
     append<HeapAllocationErrorsTest>("Constructor test 3", ConstructorTest3);
     append<HeapAllocationErrorsTest>("Constructor test 4", ConstructorTest4);
-    append<HeapAllocationErrorsTest>("operator== test 1", EqualToTest1);
-    append<HeapAllocationErrorsTest>("operator== test 2", EqualToTest2);
-    append<HeapAllocationErrorsTest>("operator!= test 1", NotEqualToTest1);
-    append<HeapAllocationErrorsTest>("operator!= test 2", NotEqualToTest2);
+    append<HeapAllocationErrorsTest>("operator== test 1", IsEqualToOperatorTest1);
+    append<HeapAllocationErrorsTest>("operator== test 2", IsEqualToOperatorTest2);
+    append<HeapAllocationErrorsTest>("operator!= test 1", IsNotEqualToOperatorTest1);
+    append<HeapAllocationErrorsTest>("operator!= test 2", IsNotEqualToOperatorTest2);
     append<HeapAllocationErrorsTest>("toString test 1", ToStringTest1);
     append<HeapAllocationErrorsTest>("toString test 2", ToStringTest2);
+    append<HeapAllocationErrorsTest>("operator<< test 1", StreamOutputOperatorTest1);
 }
 
 void UUIDTests::ConstructorTest1(Test& test)
@@ -62,7 +64,7 @@ void UUIDTests::ConstructorTest4(Test& test)
     ISHTF_PASS();
 }
 
-void UUIDTests::EqualToTest1(Test& test)
+void UUIDTests::IsEqualToOperatorTest1(Test& test)
 {
     UUID uuid1("6ba7b810-9dad-11d1-80b4-00c04fd430c8");
     UUID uuid2("6ba7b810-9dad-11d1-80b4-00c04fd430c8");
@@ -71,7 +73,7 @@ void UUIDTests::EqualToTest1(Test& test)
     ISHTF_PASS();
 }
 
-void UUIDTests::EqualToTest2(Test& test)
+void UUIDTests::IsEqualToOperatorTest2(Test& test)
 {
     UUID uuid1("6ba7b810-9dad-11d1-80b4-00c04fd430c8");
     UUID uuid2("6ba7b810-9dad-11d1-80b4-00c04fd430c9");
@@ -80,7 +82,7 @@ void UUIDTests::EqualToTest2(Test& test)
     ISHTF_PASS();
 }
 
-void UUIDTests::NotEqualToTest1(Test& test)
+void UUIDTests::IsNotEqualToOperatorTest1(Test& test)
 {
     UUID uuid1("6ba7b810-9dad-11d1-80b4-00c04fd430c8");
     UUID uuid2("6ba7b810-9dad-11d1-80b4-00c04fd430c8");
@@ -89,7 +91,7 @@ void UUIDTests::NotEqualToTest1(Test& test)
     ISHTF_PASS();
 }
 
-void UUIDTests::NotEqualToTest2(Test& test)
+void UUIDTests::IsNotEqualToOperatorTest2(Test& test)
 {
     UUID uuid1("6ba7b810-9dad-11d1-80b4-00c04fd430c8");
     UUID uuid2("6ba7b810-9dad-11d1-80b4-00c04fd430c9");
@@ -111,5 +113,16 @@ void UUIDTests::ToStringTest2(Test& test)
     UUID uuid("6ba7b810-9dad-11d1-80b4-00c04fd430c8");
 
     ISHTF_FAIL_IF_NEQ(uuid.toString(), "6ba7b810-9dad-11d1-80b4-00c04fd430c8");
+    ISHTF_PASS();
+}
+
+void UUIDTests::StreamOutputOperatorTest1(Test& test)
+{
+    UUID uuid("6ba7b810-9dad-11d1-80b4-00c04fd430c8");
+
+    std::stringstream output;
+    output << uuid;
+
+    ISHTF_FAIL_IF_NEQ(output.str(), "6ba7b810-9dad-11d1-80b4-00c04fd430c8");
     ISHTF_PASS();
 }
