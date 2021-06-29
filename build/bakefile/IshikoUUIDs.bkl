@@ -44,9 +44,9 @@ library IshikoUUIDs : IshikoErrors, Boost
 
     sources
     {
-        ../../Source/ErrorCategory.cpp
-        ../../Source/UUID.cpp
-        ../../Source/UUIDVersion4Generator.cpp
-        ../../Source/PrecomputedUUIDGenerator.cpp
+        ../../src/ErrorCategory.cpp
+        ../../src/UUID.cpp
+        ../../src/UUIDVersion4Generator.cpp
+        ../../src/PrecomputedUUIDGenerator.cpp
     }
 }

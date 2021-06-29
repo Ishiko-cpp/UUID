@@ -40,16 +40,16 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\ErrorCategory.cpp">
+    <ClCompile Include="..\..\src\ErrorCategory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\UUID.cpp">
+    <ClCompile Include="..\..\src\UUID.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\UUIDVersion4Generator.cpp">
+    <ClCompile Include="..\..\src\UUIDVersion4Generator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\PrecomputedUUIDGenerator.cpp">
+    <ClCompile Include="..\..\src\PrecomputedUUIDGenerator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
