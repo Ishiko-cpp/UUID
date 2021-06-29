@@ -13,11 +13,11 @@ template IshikoUUIDs : IshikoErrors
 
     if ($(toolset) == gnu)
     {
-        libdirs += $(ISHIKO_CPP_UUIDS_ROOT)/Lib;
+        libdirs += $(ISHIKO_CPP_UUIDS_ROOT)/lib;
     }
 
     if ($(toolset) != gnu)
     {
-        libdirs += $(ISHIKO_CPP_UUIDS_ROOT)/Lib/$(arch);
+        libdirs += $(ISHIKO_CPP_UUIDS_ROOT)/lib/$(arch);
     }
 }
