@@ -1,6 +1,6 @@
-import ../../../Include/Ishiko/UUIDs.bkl;
+import ../../../include/Ishiko/UUIDs.bkl;
 ishikopath = envvar("ISHIKO_CPP");
-import $(ishikopath)/TestFramework/Include/Ishiko/TestFramework/TestFrameworkCore.bkl;
+import $(ishikopath)/tests/include/Ishiko/Tests/Core.bkl;
 
 toolsets = gnu vs2017 vs2015 vs2013;
 
@@ -9,7 +9,7 @@ vs2017.solutionfile = ../VC15/IshikoUUIDsTests.sln;
 vs2015.solutionfile = ../VC14/IshikoUUIDsTests.sln;
 vs2013.solutionfile = ../VC12/IshikoUUUIDsTests.sln;
 
-program IshikoUUIDsTests : IshikoUUIDs, IshikoTestFrameworkCore
+program IshikoUUIDsTests : IshikoUUIDs, IshikoTestsCore
 {
     archs = x86 x86_64;
 
