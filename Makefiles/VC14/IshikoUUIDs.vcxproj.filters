@@ -17,25 +17,25 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Include\Ishiko\UUIDs.h">
+    <ClInclude Include="..\..\include\Ishiko\UUIDs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Include\Ishiko\UUIDs\ErrorCategory.h">
+    <ClInclude Include="..\..\include\Ishiko\UUIDs\ErrorCategory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Include\Ishiko\UUIDs\UUID.h">
+    <ClInclude Include="..\..\include\Ishiko\UUIDs\UUID.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Include\Ishiko\UUIDs\UUIDGenerator.h">
+    <ClInclude Include="..\..\include\Ishiko\UUIDs\UUIDGenerator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Include\Ishiko\UUIDs\UUIDVersion4Generator.h">
+    <ClInclude Include="..\..\include\Ishiko\UUIDs\UUIDVersion4Generator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Include\Ishiko\UUIDs\PrecomputedUUIDGenerator.h">
+    <ClInclude Include="..\..\include\Ishiko\UUIDs\PrecomputedUUIDGenerator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Include\Ishiko\UUIDs\linkoptions.h">
+    <ClInclude Include="..\..\include\Ishiko\UUIDs\linkoptions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
