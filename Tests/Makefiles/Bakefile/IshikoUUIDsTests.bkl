@@ -16,7 +16,7 @@ program IshikoUUIDsTests : IshikoUUIDs, IshikoTestsCore
     if ($(toolset) == gnu)
     {
         cxx-compiler-options = "-std=c++11";
-        libs += IshikoUUIDs IshikoTestFrameworkCore IshikoProcess IshikoErrors boost_filesystem boost_system;
+        libs += IshikoUUIDs IshikoTestsCore IshikoProcess IshikoErrors boost_filesystem boost_system;
     }
 
     headers
