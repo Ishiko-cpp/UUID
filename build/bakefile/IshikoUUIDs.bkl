@@ -4,10 +4,10 @@ import $(ishikopath)/third-party-glue/include/Ishiko/ThirdParty/Boost.bkl;
 
 toolsets = gnu vs2017 vs2015 vs2013;
 
-gnu.makefile = ../GNUmakefile/GNUmakefile;
-vs2017.solutionfile = ../VC15/IshikoUUIDs.sln;
-vs2015.solutionfile = ../VC14/IshikoUUIDs.sln;
-vs2013.solutionfile = ../VC12/IshikoUUIDs.sln;
+gnu.makefile = ../gnumake/GNUmakefile;
+vs2017.solutionfile = ../vc15/IshikoUUIDs.sln;
+vs2015.solutionfile = ../vc14/IshikoUUIDs.sln;
+vs2013.solutionfile = ../vc12/IshikoUUIDs.sln;
 
 library IshikoUUIDs : IshikoErrors, Boost
 {
