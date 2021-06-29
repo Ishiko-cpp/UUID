@@ -72,9 +72,9 @@ ISHIKO_CPP_BOOST_ROOT ?= $(ISHIKO_CPP_THIRD_PARTY_BOOST)
 
 # ------------
 
-all: ../Bakefile/../../Lib/lib$(if $(call _equal,$(config),Debug),IshikoUUIDs-d,IshikoUUIDs).a
+all: ../Bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoUUIDs-d,IshikoUUIDs).a
 
-../Bakefile/../../Lib/lib$(if $(call _equal,$(config),Debug),IshikoUUIDs-d,IshikoUUIDs).a: $(_builddir)IshikoUUIDs_ErrorCategory.o $(_builddir)IshikoUUIDs_UUID.o $(_builddir)IshikoUUIDs_UUIDVersion4Generator.o $(_builddir)IshikoUUIDs_PrecomputedUUIDGenerator.o
+../Bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoUUIDs-d,IshikoUUIDs).a: $(_builddir)IshikoUUIDs_ErrorCategory.o $(_builddir)IshikoUUIDs_UUID.o $(_builddir)IshikoUUIDs_UUIDVersion4Generator.o $(_builddir)IshikoUUIDs_PrecomputedUUIDGenerator.o
 	$(AR) rc $@ $(_builddir)IshikoUUIDs_ErrorCategory.o $(_builddir)IshikoUUIDs_UUID.o $(_builddir)IshikoUUIDs_UUIDVersion4Generator.o $(_builddir)IshikoUUIDs_PrecomputedUUIDGenerator.o
 	$(RANLIB) $@
 
@@ -93,7 +93,7 @@ $(_builddir)IshikoUUIDs_PrecomputedUUIDGenerator.o: ../../Source/PrecomputedUUID
 clean:
 	rm -f $(_builddir)*.o
 	rm -f $(_builddir)*.d
-	rm -f ../Bakefile/../../Lib/lib$(if $(call _equal,$(config),Debug),IshikoUUIDs-d,IshikoUUIDs).a
+	rm -f ../Bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoUUIDs-d,IshikoUUIDs).a
 
 .PHONY: all clean
 
