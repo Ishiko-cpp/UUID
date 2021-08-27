@@ -86,7 +86,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
-      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/errors\include;$(ISHIKO_CPP)/uuids\include;$(ISHIKO_CPP)/platform\include;$(ISHIKO_CPP_THIRD_PARTY_BOOST);$(ISHIKO_CPP)/filesystem\include;$(ISHIKO_CPP)/text\include;$(ISHIKO_CPP)/types\include;$(ISHIKO_CPP)/diff\include;$(ISHIKO_CPP)/process\include;$(ISHIKO_CPP)/tests\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/errors\include;$(ISHIKO_CPP)/uuids\include;$(ISHIKO_CPP)/base-platform\include;$(ISHIKO_CPP_THIRD_PARTY_BOOST);$(ISHIKO_CPP)/filesystem\include;$(ISHIKO_CPP)/text\include;$(ISHIKO_CPP)/types\include;$(ISHIKO_CPP)/diff\include;$(ISHIKO_CPP)/process\include;$(ISHIKO_CPP)/tests\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -102,7 +102,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
-      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/errors\include;$(ISHIKO_CPP)/uuids\include;$(ISHIKO_CPP)/platform\include;$(ISHIKO_CPP_THIRD_PARTY_BOOST);$(ISHIKO_CPP)/filesystem\include;$(ISHIKO_CPP)/text\include;$(ISHIKO_CPP)/types\include;$(ISHIKO_CPP)/diff\include;$(ISHIKO_CPP)/process\include;$(ISHIKO_CPP)/tests\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/errors\include;$(ISHIKO_CPP)/uuids\include;$(ISHIKO_CPP)/base-platform\include;$(ISHIKO_CPP_THIRD_PARTY_BOOST);$(ISHIKO_CPP)/filesystem\include;$(ISHIKO_CPP)/text\include;$(ISHIKO_CPP)/types\include;$(ISHIKO_CPP)/diff\include;$(ISHIKO_CPP)/process\include;$(ISHIKO_CPP)/tests\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -120,7 +120,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
-      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/errors\include;$(ISHIKO_CPP)/uuids\include;$(ISHIKO_CPP)/platform\include;$(ISHIKO_CPP_THIRD_PARTY_BOOST);$(ISHIKO_CPP)/filesystem\include;$(ISHIKO_CPP)/text\include;$(ISHIKO_CPP)/types\include;$(ISHIKO_CPP)/diff\include;$(ISHIKO_CPP)/process\include;$(ISHIKO_CPP)/tests\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/errors\include;$(ISHIKO_CPP)/uuids\include;$(ISHIKO_CPP)/base-platform\include;$(ISHIKO_CPP_THIRD_PARTY_BOOST);$(ISHIKO_CPP)/filesystem\include;$(ISHIKO_CPP)/text\include;$(ISHIKO_CPP)/types\include;$(ISHIKO_CPP)/diff\include;$(ISHIKO_CPP)/process\include;$(ISHIKO_CPP)/tests\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -140,7 +140,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
-      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/errors\include;$(ISHIKO_CPP)/uuids\include;$(ISHIKO_CPP)/platform\include;$(ISHIKO_CPP_THIRD_PARTY_BOOST);$(ISHIKO_CPP)/filesystem\include;$(ISHIKO_CPP)/text\include;$(ISHIKO_CPP)/types\include;$(ISHIKO_CPP)/diff\include;$(ISHIKO_CPP)/process\include;$(ISHIKO_CPP)/tests\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/errors\include;$(ISHIKO_CPP)/uuids\include;$(ISHIKO_CPP)/base-platform\include;$(ISHIKO_CPP_THIRD_PARTY_BOOST);$(ISHIKO_CPP)/filesystem\include;$(ISHIKO_CPP)/text\include;$(ISHIKO_CPP)/types\include;$(ISHIKO_CPP)/diff\include;$(ISHIKO_CPP)/process\include;$(ISHIKO_CPP)/tests\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -152,15 +152,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\main.cpp" />
-    <ClCompile Include="..\..\Source\UUIDTests.cpp" />
-    <ClCompile Include="..\..\Source\UUIDVersion4GeneratorTests.cpp" />
-    <ClCompile Include="..\..\Source\PrecomputedUUIDGeneratorTests.cpp" />
+    <ClCompile Include="..\..\src\main.cpp" />
+    <ClCompile Include="..\..\src\UUIDTests.cpp" />
+    <ClCompile Include="..\..\src\UUIDVersion4GeneratorTests.cpp" />
+    <ClCompile Include="..\..\src\PrecomputedUUIDGeneratorTests.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\UUIDTests.h" />
-    <ClInclude Include="..\..\Source\UUIDVersion4GeneratorTests.h" />
-    <ClInclude Include="..\..\Source\PrecomputedUUIDGeneratorTests.h" />
+    <ClInclude Include="..\..\src\UUIDTests.h" />
+    <ClInclude Include="..\..\src\UUIDVersion4GeneratorTests.h" />
+    <ClInclude Include="..\..\src\PrecomputedUUIDGeneratorTests.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

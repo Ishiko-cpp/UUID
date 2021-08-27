@@ -17,27 +17,39 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\src\UUIDTests.h">
+    <ClInclude Include="..\..\include\Ishiko\UUIDs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\UUIDVersion4GeneratorTests.h">
+    <ClInclude Include="..\..\include\Ishiko\UUIDs\ErrorCategory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\PrecomputedUUIDGeneratorTests.h">
+    <ClInclude Include="..\..\include\Ishiko\UUIDs\UUID.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Ishiko\UUIDs\UUIDGenerator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Ishiko\UUIDs\UUIDVersion4Generator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Ishiko\UUIDs\PrecomputedUUIDGenerator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Ishiko\UUIDs\linkoptions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\main.cpp">
+    <ClCompile Include="..\..\src\ErrorCategory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\UUIDTests.cpp">
+    <ClCompile Include="..\..\src\UUID.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\UUIDVersion4GeneratorTests.cpp">
+    <ClCompile Include="..\..\src\UUIDVersion4Generator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\PrecomputedUUIDGeneratorTests.cpp">
+    <ClCompile Include="..\..\src\PrecomputedUUIDGenerator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
