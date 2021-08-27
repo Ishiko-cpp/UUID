@@ -76,13 +76,13 @@ void PrecomputedUUIDGeneratorTests::GenerateTest3(Test& test)
     Error error;
     UUID uuid1 = generator.generate(error);
 
-    ISHTF_FAIL_IF(error);
-    ISHTF_FAIL_IF_NEQ(uuid1.toString(), "6ba7b810-9dad-11d1-80b4-00c04fd430c8");
+    ISHIKO_FAIL_IF(error);
+    ISHIKO_FAIL_IF_NEQ(uuid1.toString(), "6ba7b810-9dad-11d1-80b4-00c04fd430c8");
 
     UUID uuid2 = generator.generate(error);
 
-    ISHTF_FAIL_IF(error);
-    ISHTF_FAIL_IF_NEQ(uuid2.toString(), "6ba7b810-9dad-11d1-80b4-00c04fd430c9");
+    ISHIKO_FAIL_IF(error);
+    ISHIKO_FAIL_IF_NEQ(uuid2.toString(), "6ba7b810-9dad-11d1-80b4-00c04fd430c9");
 
     UUID uuid3 = generator.generate(error);
 

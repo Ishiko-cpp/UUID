@@ -7,6 +7,7 @@
 #include "UUIDTests.h"
 #include "UUIDVersion4GeneratorTests.h"
 #include "PrecomputedUUIDGeneratorTests.h"
+#include "Ishiko/UUIDs/linkoptions.h"
 #include <Ishiko/Tests/Core.h>
 
 using namespace Ishiko::Tests;
