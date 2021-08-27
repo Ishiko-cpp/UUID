@@ -1,10 +1,11 @@
-import ../../../include/Ishiko/UUIDs.bkl;
 ishikopath = envvar("ISHIKO_CPP");
+import $(ishikopath)/uuids/include/Ishiko/UUIDs.bkl;
 import $(ishikopath)/tests/include/Ishiko/Tests/Core.bkl;
 
-toolsets = gnu vs2017 vs2015 vs2013;
+toolsets = gnu vs2019 vs2017 vs2015 vs2013;
 
 gnu.makefile = ../gnumake/GNUmakefile;
+vs2019.solutionfile = ../vc16/IshikoUUIDsTests.sln;
 vs2017.solutionfile = ../vc15/IshikoUUIDsTests.sln;
 vs2015.solutionfile = ../vc14/IshikoUUIDsTests.sln;
 vs2013.solutionfile = ../vc12/IshikoUUUIDsTests.sln;
@@ -21,16 +22,16 @@ program IshikoUUIDsTests : IshikoUUIDs, IshikoTestsCore
 
     headers
     {
-        ../../Source/UUIDTests.h
-        ../../Source/UUIDVersion4GeneratorTests.h
-        ../../Source/PrecomputedUUIDGeneratorTests.h
+        ../../src/UUIDTests.h
+        ../../src/UUIDVersion4GeneratorTests.h
+        ../../src/PrecomputedUUIDGeneratorTests.h
     }
 
     sources
     {
-        ../../Source/main.cpp
-        ../../Source/UUIDTests.cpp
-        ../../Source/UUIDVersion4GeneratorTests.cpp
-        ../../Source/PrecomputedUUIDGeneratorTests.cpp
+        ../../src/main.cpp
+        ../../src/UUIDTests.cpp
+        ../../src/UUIDVersion4GeneratorTests.cpp
+        ../../src/PrecomputedUUIDGeneratorTests.cpp
     }
 }
