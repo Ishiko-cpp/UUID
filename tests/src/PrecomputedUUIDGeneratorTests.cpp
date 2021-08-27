@@ -6,7 +6,7 @@
 
 #include "PrecomputedUUIDGeneratorTests.h"
 #include "Ishiko/UUIDs/PrecomputedUUIDGenerator.h"
-#include <Ishiko/Errors/Error.h>
+#include <Ishiko/Errors.hpp>
 
 using namespace Ishiko;
 using namespace Ishiko::Tests;
@@ -28,14 +28,14 @@ void PrecomputedUUIDGeneratorTests::ConstructorTest1(Test& test)
     std::vector<UUID> uuids = {"6ba7b810-9dad-11d1-80b4-00c04fd430c8"};
     PrecomputedUUIDGenerator generator(uuids);
 
-    ISHTF_PASS();
+    ISHIKO_PASS();
 }
 
 void PrecomputedUUIDGeneratorTests::ConstructorTest2(Test& test)
 {
     PrecomputedUUIDGenerator generator({"6ba7b810-9dad-11d1-80b4-00c04fd430c8"});
 
-    ISHTF_PASS();
+    ISHIKO_PASS();
 }
 
 void PrecomputedUUIDGeneratorTests::GenerateTest1(Test& test)
@@ -45,9 +45,9 @@ void PrecomputedUUIDGeneratorTests::GenerateTest1(Test& test)
     Error error;
     UUID uuid = generator.generate(error);
 
-    ISHTF_FAIL_IF_NOT(error);
-    ISHTF_FAIL_IF_NOT(uuid.isNil());
-    ISHTF_PASS();
+    ISHIKO_FAIL_IF_NOT(error);
+    ISHIKO_FAIL_IF_NOT(uuid.isNil());
+    ISHIKO_PASS();
 }
 
 void PrecomputedUUIDGeneratorTests::GenerateTest2(Test& test)
@@ -57,15 +57,15 @@ void PrecomputedUUIDGeneratorTests::GenerateTest2(Test& test)
     Error error;
     UUID uuid1 = generator.generate(error);
 
-    ISHTF_FAIL_IF(error);
-    ISHTF_FAIL_IF_NEQ(uuid1.toString(), "6ba7b810-9dad-11d1-80b4-00c04fd430c8");
+    ISHIKO_FAIL_IF(error);
+    ISHIKO_FAIL_IF_NEQ(uuid1.toString(), "6ba7b810-9dad-11d1-80b4-00c04fd430c8");
 
     UUID uuid2 = generator.generate(error);
     
-    ISHTF_FAIL_IF_NOT(error);
-    ISHTF_FAIL_IF_NOT(uuid2.isNil());
+    ISHIKO_FAIL_IF_NOT(error);
+    ISHIKO_FAIL_IF_NOT(uuid2.isNil());
 
-    ISHTF_PASS();
+    ISHIKO_PASS();
 }
 
 void PrecomputedUUIDGeneratorTests::GenerateTest3(Test& test)
@@ -86,8 +86,8 @@ void PrecomputedUUIDGeneratorTests::GenerateTest3(Test& test)
 
     UUID uuid3 = generator.generate(error);
 
-    ISHTF_FAIL_IF_NOT(error);
-    ISHTF_FAIL_IF_NOT(uuid3.isNil());
+    ISHIKO_FAIL_IF_NOT(error);
+    ISHIKO_FAIL_IF_NOT(uuid3.isNil());
 
-    ISHTF_PASS();
+    ISHIKO_PASS();
 }
