@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2021 Xavier Leclercq
+    Copyright (c) 2021-2022 Xavier Leclercq
     Released under the MIT License
     See https://github.com/ishiko-cpp/uuids/blob/main/LICENSE.txt
 */
@@ -8,7 +8,7 @@
 #include "UUIDVersion4GeneratorTests.h"
 #include "PrecomputedUUIDGeneratorTests.h"
 #include "Ishiko/UUIDs/linkoptions.h"
-#include <Ishiko/Tests/Core.h>
+#include <Ishiko/Tests/Core.hpp>
 
 using namespace Ishiko::Tests;
 
