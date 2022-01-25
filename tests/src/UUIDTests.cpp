@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2021 Xavier Leclercq
+    Copyright (c) 2021-2022 Xavier Leclercq
     Released under the MIT License
     See https://github.com/ishiko-cpp/uuids/blob/main/LICENSE.txt
 */
@@ -14,8 +14,8 @@
 using namespace Ishiko::Tests;
 using namespace Ishiko::UUIDs;
 
-UUIDTests::UUIDTests(const TestNumber& number, const TestEnvironment& environment)
-    : TestSequence(number, "UUID tests", environment)
+UUIDTests::UUIDTests(const TestNumber& number, const TestContext& context)
+    : TestSequence(number, "UUID tests", context)
 {
     append<HeapAllocationErrorsTest>("Constructor test 1", ConstructorTest1);
     append<HeapAllocationErrorsTest>("Constructor test 2", ConstructorTest2);
