@@ -11,7 +11,7 @@
 #include <boost/uuid/uuid_io.hpp>
 #include <sstream>
 
-using namespace Ishiko::Tests;
+using namespace Ishiko;
 using namespace Ishiko::UUIDs;
 
 UUIDTests::UUIDTests(const TestNumber& number, const TestContext& context)
@@ -34,8 +34,8 @@ void UUIDTests::ConstructorTest1(Test& test)
 {
     UUID uuid;
 
-    ISHIKO_FAIL_IF_NOT(uuid.isNil());
-    ISHIKO_PASS();
+    ISHIKO_TEST_FAIL_IF_NOT(uuid.isNil());
+    ISHIKO_TEST_PASS();
 }
 
 void UUIDTests::ConstructorTest2(Test& test)
@@ -43,8 +43,8 @@ void UUIDTests::ConstructorTest2(Test& test)
     boost::uuids::uuid srcUUID = boost::uuids::random_generator()();
     UUID uuid(srcUUID);
 
-    ISHIKO_FAIL_IF_NEQ(uuid.toString(), boost::uuids::to_string(srcUUID));
-    ISHIKO_PASS();
+    ISHIKO_TEST_FAIL_IF_NEQ(uuid.toString(), boost::uuids::to_string(srcUUID));
+    ISHIKO_TEST_PASS();
 }
 
 void UUIDTests::ConstructorTest3(Test& test)
@@ -52,16 +52,16 @@ void UUIDTests::ConstructorTest3(Test& test)
     std::string string = "6ba7b810-9dad-11d1-80b4-00c04fd430c8";
     UUID uuid(string);
 
-    ISHIKO_FAIL_IF_NEQ(uuid.toString(), "6ba7b810-9dad-11d1-80b4-00c04fd430c8");
-    ISHIKO_PASS();
+    ISHIKO_TEST_FAIL_IF_NEQ(uuid.toString(), "6ba7b810-9dad-11d1-80b4-00c04fd430c8");
+    ISHIKO_TEST_PASS();
 }
 
 void UUIDTests::ConstructorTest4(Test& test)
 {
     UUID uuid("6ba7b810-9dad-11d1-80b4-00c04fd430c8");
 
-    ISHIKO_FAIL_IF_NEQ(uuid.toString(), "6ba7b810-9dad-11d1-80b4-00c04fd430c8");
-    ISHIKO_PASS();
+    ISHIKO_TEST_FAIL_IF_NEQ(uuid.toString(), "6ba7b810-9dad-11d1-80b4-00c04fd430c8");
+    ISHIKO_TEST_PASS();
 }
 
 void UUIDTests::IsEqualToOperatorTest1(Test& test)
@@ -69,8 +69,8 @@ void UUIDTests::IsEqualToOperatorTest1(Test& test)
     UUID uuid1("6ba7b810-9dad-11d1-80b4-00c04fd430c8");
     UUID uuid2("6ba7b810-9dad-11d1-80b4-00c04fd430c8");
     
-    ISHIKO_FAIL_IF_NOT(uuid1 == uuid2);
-    ISHIKO_PASS();
+    ISHIKO_TEST_FAIL_IF_NOT(uuid1 == uuid2);
+    ISHIKO_TEST_PASS();
 }
 
 void UUIDTests::IsEqualToOperatorTest2(Test& test)
@@ -78,8 +78,8 @@ void UUIDTests::IsEqualToOperatorTest2(Test& test)
     UUID uuid1("6ba7b810-9dad-11d1-80b4-00c04fd430c8");
     UUID uuid2("6ba7b810-9dad-11d1-80b4-00c04fd430c9");
 
-    ISHIKO_FAIL_IF(uuid1 == uuid2);
-    ISHIKO_PASS();
+    ISHIKO_TEST_FAIL_IF(uuid1 == uuid2);
+    ISHIKO_TEST_PASS();
 }
 
 void UUIDTests::IsNotEqualToOperatorTest1(Test& test)
@@ -87,8 +87,8 @@ void UUIDTests::IsNotEqualToOperatorTest1(Test& test)
     UUID uuid1("6ba7b810-9dad-11d1-80b4-00c04fd430c8");
     UUID uuid2("6ba7b810-9dad-11d1-80b4-00c04fd430c8");
 
-    ISHIKO_FAIL_IF(uuid1 != uuid2);
-    ISHIKO_PASS();
+    ISHIKO_TEST_FAIL_IF(uuid1 != uuid2);
+    ISHIKO_TEST_PASS();
 }
 
 void UUIDTests::IsNotEqualToOperatorTest2(Test& test)
@@ -96,24 +96,24 @@ void UUIDTests::IsNotEqualToOperatorTest2(Test& test)
     UUID uuid1("6ba7b810-9dad-11d1-80b4-00c04fd430c8");
     UUID uuid2("6ba7b810-9dad-11d1-80b4-00c04fd430c9");
 
-    ISHIKO_FAIL_IF_NOT(uuid1 != uuid2);
-    ISHIKO_PASS();
+    ISHIKO_TEST_FAIL_IF_NOT(uuid1 != uuid2);
+    ISHIKO_TEST_PASS();
 }
 
 void UUIDTests::ToStringTest1(Test& test)
 {
     UUID uuid;
     
-    ISHIKO_FAIL_IF_NEQ(uuid.toString(), "00000000-0000-0000-0000-000000000000");
-    ISHIKO_PASS();
+    ISHIKO_TEST_FAIL_IF_NEQ(uuid.toString(), "00000000-0000-0000-0000-000000000000");
+    ISHIKO_TEST_PASS();
 }
 
 void UUIDTests::ToStringTest2(Test& test)
 {
     UUID uuid("6ba7b810-9dad-11d1-80b4-00c04fd430c8");
 
-    ISHIKO_FAIL_IF_NEQ(uuid.toString(), "6ba7b810-9dad-11d1-80b4-00c04fd430c8");
-    ISHIKO_PASS();
+    ISHIKO_TEST_FAIL_IF_NEQ(uuid.toString(), "6ba7b810-9dad-11d1-80b4-00c04fd430c8");
+    ISHIKO_TEST_PASS();
 }
 
 void UUIDTests::StreamOutputOperatorTest1(Test& test)
@@ -123,6 +123,6 @@ void UUIDTests::StreamOutputOperatorTest1(Test& test)
     std::stringstream output;
     output << uuid;
 
-    ISHIKO_FAIL_IF_NEQ(output.str(), "6ba7b810-9dad-11d1-80b4-00c04fd430c8");
-    ISHIKO_PASS();
+    ISHIKO_TEST_FAIL_IF_NEQ(output.str(), "6ba7b810-9dad-11d1-80b4-00c04fd430c8");
+    ISHIKO_TEST_PASS();
 }

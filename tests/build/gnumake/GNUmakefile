@@ -84,7 +84,7 @@ ISHIKO_CPP_DIFF_ROOT ?= $(ISHIKO_CPP)/diff
 # Path to the Ishiko Process installation
 ISHIKO_CPP_PROCESS_ROOT ?= $(ISHIKO_CPP)/process
 # Path to the Ishiko TestFramework installation
-ISHIKO_CPP_TESTFRAMEWORK_ROOT ?= $(ISHIKO_CPP)/tests
+ISHIKO_CPP_TESTFRAMEWORK_ROOT ?= $(ISHIKO_CPP)/test-framework
 # Path to the Ishiko UUIDs installation
 ISHIKO_CPP_UUIDS_ROOT ?= $(ISHIKO_CPP)/uuids
 
@@ -93,7 +93,7 @@ ISHIKO_CPP_UUIDS_ROOT ?= $(ISHIKO_CPP)/uuids
 all: $(_builddir)IshikoUUIDsTests
 
 $(_builddir)IshikoUUIDsTests: $(_builddir)IshikoUUIDsTests_main.o $(_builddir)IshikoUUIDsTests_UUIDTests.o $(_builddir)IshikoUUIDsTests_UUIDVersion4GeneratorTests.o $(_builddir)IshikoUUIDsTests_PrecomputedUUIDGeneratorTests.o
-	$(CXX) -o $@ $(LDFLAGS) $(_builddir)IshikoUUIDsTests_main.o $(_builddir)IshikoUUIDsTests_UUIDTests.o $(_builddir)IshikoUUIDsTests_UUIDVersion4GeneratorTests.o $(_builddir)IshikoUUIDsTests_PrecomputedUUIDGeneratorTests.o -L$(ISHIKO_CPP_ERRORS_ROOT)/lib -L$(ISHIKO_CPP_UUIDS_ROOT)/lib -L$(ISHIKO_CPP_BOOST_ROOT)/lib -L$(ISHIKO_CPP_FILESYSTEM_ROOT)/lib -L$(ISHIKO_CPP_TEXT_ROOT)/lib -L$(ISHIKO_CPP_TYPES_ROOT)/lib -L$(ISHIKO_CPP_DIFF_ROOT)/lib -L$(ISHIKO_CPP_PROCESS_ROOT)/lib -L$(ISHIKO_CPP_TESTFRAMEWORK_ROOT)/lib -lIshikoUUIDs -lIshikoTestsCore -lIshikoProcess -lIshikoErrors -lboost_filesystem -lboost_system -pthread
+	$(CXX) -o $@ $(LDFLAGS) $(_builddir)IshikoUUIDsTests_main.o $(_builddir)IshikoUUIDsTests_UUIDTests.o $(_builddir)IshikoUUIDsTests_UUIDVersion4GeneratorTests.o $(_builddir)IshikoUUIDsTests_PrecomputedUUIDGeneratorTests.o -L$(ISHIKO_CPP_ERRORS_ROOT)/lib -L$(ISHIKO_CPP_UUIDS_ROOT)/lib -L$(ISHIKO_CPP_BOOST_ROOT)/lib -L$(ISHIKO_CPP_FILESYSTEM_ROOT)/lib -L$(ISHIKO_CPP_TEXT_ROOT)/lib -L$(ISHIKO_CPP_TYPES_ROOT)/lib -L$(ISHIKO_CPP_DIFF_ROOT)/lib -L$(ISHIKO_CPP_PROCESS_ROOT)/lib -L$(ISHIKO_CPP_TESTFRAMEWORK_ROOT)/lib -lIshikoUUIDs -lIshikoTestFrameworkCore -lIshikoProcess -lIshikoErrors -lboost_filesystem -lboost_system -pthread
 
 $(_builddir)IshikoUUIDsTests_main.o: ../../src/main.cpp
 	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_UUIDS_ROOT)/include -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I$(ISHIKO_CPP_DIFF_ROOT)/include -I$(ISHIKO_CPP_PROCESS_ROOT)/include -I$(ISHIKO_CPP_TESTFRAMEWORK_ROOT)/include -std=c++11 ../../src/main.cpp
