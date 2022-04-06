@@ -8,9 +8,9 @@
 #include "UUIDVersion4GeneratorTests.h"
 #include "PrecomputedUUIDGeneratorTests.h"
 #include "Ishiko/UUIDs/linkoptions.h"
-#include <Ishiko/Tests/Core.hpp>
+#include <Ishiko/TestFramework/Core.hpp>
 
-using namespace Ishiko::Tests;
+using namespace Ishiko;
 
 int main(int argc, char* argv[])
 {
