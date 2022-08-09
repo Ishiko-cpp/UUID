@@ -39,12 +39,19 @@ endif
 #
 #      ISHIKO_CPP_BASEPLATFORM_ROOT   Path to the Ishiko BasePlatform installation
 #      ISHIKO_CPP_ERRORS_ROOT         Path to the Ishiko Errors installation
+#      ISHIKO_CPP_MEMORY_ROOT         Path to the Ishiko/C++ Memory installation
 #      ISHIKO_CPP_BOOST_ROOT          Path to the Boost installation
-#      ISHIKO_CPP_FILESYSTEM_ROOT     Path to the Ishiko FileSystem installation
 #      ISHIKO_CPP_TEXT_ROOT           Path to the Ishiko/Text installation
+#      ISHIKO_CPP_CONFIGURATION_ROOT  Path to the Ishiko Configuration installation
+#      ISHIKO_CPP_IO_ROOT             Path to the Ishiko/C++ IO installation
+#      ISHIKO_CPP_FILESYSTEM_ROOT     Path to the Ishiko FileSystem installation
 #      ISHIKO_CPP_TYPES_ROOT          Path to the Ishiko Types installation
 #      ISHIKO_CPP_DIFF_ROOT           Path to the Ishiko Diff installation
 #      ISHIKO_CPP_PROCESS_ROOT        Path to the Ishiko Process installation
+#      ISHIKO_CPP_FMT_ROOT            Path to the fmt installation
+#      ISHIKO_CPP_TIME_ROOT           Path to the Ishiko Timeinstallation
+#      ISHIKO_CPP_PUGIXML_ROOT        Path to the pugixml installation
+#      ISHIKO_CPP_XML_ROOT            Path to the Ishiko XML installation
 #      ISHIKO_CPP_TESTFRAMEWORK_ROOT  Path to the Ishiko TestFramework installation
 #      ISHIKO_CPP_UUIDS_ROOT          Path to the Ishiko UUIDs installation
 
@@ -71,18 +78,32 @@ endif
 ISHIKO_CPP_BASEPLATFORM_ROOT ?= $(ISHIKO_CPP)/base-platform
 # Path to the Ishiko Errors installation
 ISHIKO_CPP_ERRORS_ROOT ?= $(ISHIKO_CPP)/errors
+# Path to the Ishiko/C++ Memory installation
+ISHIKO_CPP_MEMORY_ROOT ?= $(ISHIKO_CPP)/memory
 # Path to the Boost installation
 ISHIKO_CPP_BOOST_ROOT ?= $(ISHIKO_CPP_THIRD_PARTY_BOOST)
-# Path to the Ishiko FileSystem installation
-ISHIKO_CPP_FILESYSTEM_ROOT ?= $(ISHIKO_CPP)/filesystem
 # Path to the Ishiko/Text installation
 ISHIKO_CPP_TEXT_ROOT ?= $(ISHIKO_CPP)/text
+# Path to the Ishiko Configuration installation
+ISHIKO_CPP_CONFIGURATION_ROOT ?= $(ISHIKO_CPP)/configuration
+# Path to the Ishiko/C++ IO installation
+ISHIKO_CPP_IO_ROOT ?= $(ISHIKO_CPP)/io
+# Path to the Ishiko FileSystem installation
+ISHIKO_CPP_FILESYSTEM_ROOT ?= $(ISHIKO_CPP)/filesystem
 # Path to the Ishiko Types installation
 ISHIKO_CPP_TYPES_ROOT ?= $(ISHIKO_CPP)/types
 # Path to the Ishiko Diff installation
 ISHIKO_CPP_DIFF_ROOT ?= $(ISHIKO_CPP)/diff
 # Path to the Ishiko Process installation
 ISHIKO_CPP_PROCESS_ROOT ?= $(ISHIKO_CPP)/process
+# Path to the fmt installation
+ISHIKO_CPP_FMT_ROOT ?= $(ISHIKO_CPP_THIRD_PARTY_FMT)
+# Path to the Ishiko Timeinstallation
+ISHIKO_CPP_TIME_ROOT ?= $(ISHIKO_CPP)/time
+# Path to the pugixml installation
+ISHIKO_CPP_PUGIXML_ROOT ?= $(ISHIKO_CPP_THIRD_PARTY_PUGIXML)
+# Path to the Ishiko XML installation
+ISHIKO_CPP_XML_ROOT ?= $(ISHIKO_CPP)/xml
 # Path to the Ishiko TestFramework installation
 ISHIKO_CPP_TESTFRAMEWORK_ROOT ?= $(ISHIKO_CPP)/test-framework
 # Path to the Ishiko UUIDs installation
@@ -93,19 +114,19 @@ ISHIKO_CPP_UUIDS_ROOT ?= $(ISHIKO_CPP)/uuids
 all: $(_builddir)IshikoUUIDsTests
 
 $(_builddir)IshikoUUIDsTests: $(_builddir)IshikoUUIDsTests_main.o $(_builddir)IshikoUUIDsTests_UUIDTests.o $(_builddir)IshikoUUIDsTests_UUIDVersion4GeneratorTests.o $(_builddir)IshikoUUIDsTests_PrecomputedUUIDGeneratorTests.o
-	$(CXX) -o $@ $(LDFLAGS) $(_builddir)IshikoUUIDsTests_main.o $(_builddir)IshikoUUIDsTests_UUIDTests.o $(_builddir)IshikoUUIDsTests_UUIDVersion4GeneratorTests.o $(_builddir)IshikoUUIDsTests_PrecomputedUUIDGeneratorTests.o -L$(ISHIKO_CPP_ERRORS_ROOT)/lib -L$(ISHIKO_CPP_UUIDS_ROOT)/lib -L$(ISHIKO_CPP_BOOST_ROOT)/lib -L$(ISHIKO_CPP_FILESYSTEM_ROOT)/lib -L$(ISHIKO_CPP_TEXT_ROOT)/lib -L$(ISHIKO_CPP_TYPES_ROOT)/lib -L$(ISHIKO_CPP_DIFF_ROOT)/lib -L$(ISHIKO_CPP_PROCESS_ROOT)/lib -L$(ISHIKO_CPP_TESTFRAMEWORK_ROOT)/lib -lIshikoUUIDs -lIshikoTestFrameworkCore -lIshikoProcess -lIshikoErrors -lboost_filesystem -lboost_system -pthread
+	$(CXX) -o $@ $(LDFLAGS) $(_builddir)IshikoUUIDsTests_main.o $(_builddir)IshikoUUIDsTests_UUIDTests.o $(_builddir)IshikoUUIDsTests_UUIDVersion4GeneratorTests.o $(_builddir)IshikoUUIDsTests_PrecomputedUUIDGeneratorTests.o -L$(ISHIKO_CPP_ERRORS_ROOT)/lib -L$(ISHIKO_CPP_UUIDS_ROOT)/lib -L$(ISHIKO_CPP_MEMORY_ROOT)/lib -L$(ISHIKO_CPP_BOOST_ROOT)/lib -L$(ISHIKO_CPP_TEXT_ROOT)/lib -L$(ISHIKO_CPP_CONFIGURATION_ROOT)/lib -L$(ISHIKO_CPP_IO_ROOT)/lib -L$(ISHIKO_CPP_FILESYSTEM_ROOT)/lib -L$(ISHIKO_CPP_TYPES_ROOT)/lib -L$(ISHIKO_CPP_DIFF_ROOT)/lib -L$(ISHIKO_CPP_XML_ROOT)/lib -L$(ISHIKO_CPP_PROCESS_ROOT)/lib -L$(ISHIKO_CPP_FMT_ROOT)/lib -L$(ISHIKO_CPP_TIME_ROOT)/lib -L$(ISHIKO_CPP_TESTFRAMEWORK_ROOT)/lib -lIshikoUUIDs -lIshikoTestFrameworkCore -lIshikoConfiguration -lIshikoXML -lIshikoFileSystem -lIshikoIO -lIshikoProcess -lIshikoTime -lIshikoText -lIshikoErrors -lfmt -lboost_filesystem -lboost_system -pthread
 
 $(_builddir)IshikoUUIDsTests_main.o: ../../src/main.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_UUIDS_ROOT)/include -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I$(ISHIKO_CPP_DIFF_ROOT)/include -I$(ISHIKO_CPP_PROCESS_ROOT)/include -I$(ISHIKO_CPP_TESTFRAMEWORK_ROOT)/include -std=c++11 ../../src/main.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread -DPUGIXML_HEADER_ONLY -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_UUIDS_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_CONFIGURATION_ROOT)/include -I$(ISHIKO_CPP_IO_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I$(ISHIKO_CPP_DIFF_ROOT)/include -I$(ISHIKO_CPP_PUGIXML_ROOT)/src -I$(ISHIKO_CPP_XML_ROOT)/include -I$(ISHIKO_CPP_PROCESS_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_TIME_ROOT)/include -I$(ISHIKO_CPP_TESTFRAMEWORK_ROOT)/include -std=c++11 ../../src/main.cpp
 
 $(_builddir)IshikoUUIDsTests_UUIDTests.o: ../../src/UUIDTests.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_UUIDS_ROOT)/include -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I$(ISHIKO_CPP_DIFF_ROOT)/include -I$(ISHIKO_CPP_PROCESS_ROOT)/include -I$(ISHIKO_CPP_TESTFRAMEWORK_ROOT)/include -std=c++11 ../../src/UUIDTests.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread -DPUGIXML_HEADER_ONLY -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_UUIDS_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_CONFIGURATION_ROOT)/include -I$(ISHIKO_CPP_IO_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I$(ISHIKO_CPP_DIFF_ROOT)/include -I$(ISHIKO_CPP_PUGIXML_ROOT)/src -I$(ISHIKO_CPP_XML_ROOT)/include -I$(ISHIKO_CPP_PROCESS_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_TIME_ROOT)/include -I$(ISHIKO_CPP_TESTFRAMEWORK_ROOT)/include -std=c++11 ../../src/UUIDTests.cpp
 
 $(_builddir)IshikoUUIDsTests_UUIDVersion4GeneratorTests.o: ../../src/UUIDVersion4GeneratorTests.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_UUIDS_ROOT)/include -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I$(ISHIKO_CPP_DIFF_ROOT)/include -I$(ISHIKO_CPP_PROCESS_ROOT)/include -I$(ISHIKO_CPP_TESTFRAMEWORK_ROOT)/include -std=c++11 ../../src/UUIDVersion4GeneratorTests.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread -DPUGIXML_HEADER_ONLY -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_UUIDS_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_CONFIGURATION_ROOT)/include -I$(ISHIKO_CPP_IO_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I$(ISHIKO_CPP_DIFF_ROOT)/include -I$(ISHIKO_CPP_PUGIXML_ROOT)/src -I$(ISHIKO_CPP_XML_ROOT)/include -I$(ISHIKO_CPP_PROCESS_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_TIME_ROOT)/include -I$(ISHIKO_CPP_TESTFRAMEWORK_ROOT)/include -std=c++11 ../../src/UUIDVersion4GeneratorTests.cpp
 
 $(_builddir)IshikoUUIDsTests_PrecomputedUUIDGeneratorTests.o: ../../src/PrecomputedUUIDGeneratorTests.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_UUIDS_ROOT)/include -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I$(ISHIKO_CPP_DIFF_ROOT)/include -I$(ISHIKO_CPP_PROCESS_ROOT)/include -I$(ISHIKO_CPP_TESTFRAMEWORK_ROOT)/include -std=c++11 ../../src/PrecomputedUUIDGeneratorTests.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread -DPUGIXML_HEADER_ONLY -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_UUIDS_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_CONFIGURATION_ROOT)/include -I$(ISHIKO_CPP_IO_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I$(ISHIKO_CPP_DIFF_ROOT)/include -I$(ISHIKO_CPP_PUGIXML_ROOT)/src -I$(ISHIKO_CPP_XML_ROOT)/include -I$(ISHIKO_CPP_PROCESS_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_TIME_ROOT)/include -I$(ISHIKO_CPP_TESTFRAMEWORK_ROOT)/include -std=c++11 ../../src/PrecomputedUUIDGeneratorTests.cpp
 
 clean:
 	rm -f $(_builddir)*.o
