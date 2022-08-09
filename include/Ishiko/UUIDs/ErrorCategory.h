@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2021 Xavier Leclercq
+    Copyright (c) 2021-2022 Xavier Leclercq
     Released under the MIT License
     See https://github.com/ishiko-cpp/uuids/blob/main/LICENSE.txt
 */
@@ -31,7 +31,7 @@ private:
     ErrorCategory() noexcept = default;
 };
 
-void Fail(Error& error, ErrorCategory::EErrorValues value) noexcept;
+void Fail(ErrorCategory::EErrorValues value, Error& error) noexcept;
 
 }
 }
