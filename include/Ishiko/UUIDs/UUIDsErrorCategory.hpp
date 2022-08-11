@@ -4,8 +4,8 @@
     See https://github.com/ishiko-cpp/uuids/blob/main/LICENSE.txt
 */
 
-#ifndef _ISHIKO_CPP_UUIDS_ERRORCATEGORY_H_
-#define _ISHIKO_CPP_UUIDS_ERRORCATEGORY_H_
+#ifndef GUARD_ISHIKO_CPP_UUIDS_UUIDSERRORCATEGORY_HPP
+#define GUARD_ISHIKO_CPP_UUIDS_UUIDSERRORCATEGORY_HPP
 
 #include <Ishiko/Errors.hpp>
 

@@ -4,7 +4,7 @@
     See https://github.com/ishiko-cpp/uuids/blob/main/LICENSE.txt
 */
 
-#include "ErrorCategory.h"
+#include "UUIDsErrorCategory.hpp"
 
 namespace Ishiko
 {
