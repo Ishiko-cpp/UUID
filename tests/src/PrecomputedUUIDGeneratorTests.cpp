@@ -9,7 +9,6 @@
 #include <Ishiko/Errors.hpp>
 
 using namespace Ishiko;
-using namespace Ishiko::UUIDs;
 
 PrecomputedUUIDGeneratorTests::PrecomputedUUIDGeneratorTests(const TestNumber& number, const TestContext& context)
     : TestSequence(number, "PrecomputedUUIDGenerator tests", context)

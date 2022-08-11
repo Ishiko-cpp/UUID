@@ -12,7 +12,6 @@
 #include <sstream>
 
 using namespace Ishiko;
-using namespace Ishiko::UUIDs;
 
 UUIDTests::UUIDTests(const TestNumber& number, const TestContext& context)
     : TestSequence(number, "UUID tests", context)
