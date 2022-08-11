@@ -150,14 +150,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\ErrorCategory.cpp" />
+    <ClCompile Include="..\..\src\UUIDsErrorCategory.cpp" />
     <ClCompile Include="..\..\src\UUID.cpp" />
     <ClCompile Include="..\..\src\UUIDVersion4Generator.cpp" />
     <ClCompile Include="..\..\src\PrecomputedUUIDGenerator.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\include\Ishiko\UUIDs.h" />
-    <ClInclude Include="..\..\include\Ishiko\UUIDs\ErrorCategory.h" />
+    <ClInclude Include="..\..\include\Ishiko\UUIDs.hpp" />
+    <ClInclude Include="..\..\include\Ishiko\UUIDs\UUIDsErrorCategory.hpp" />
     <ClInclude Include="..\..\include\Ishiko\UUIDs\UUID.h" />
     <ClInclude Include="..\..\include\Ishiko\UUIDs\UUIDGenerator.h" />
     <ClInclude Include="..\..\include\Ishiko\UUIDs\UUIDVersion4Generator.h" />

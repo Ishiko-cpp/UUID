@@ -17,10 +17,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\include\Ishiko\UUIDs.h">
+    <ClInclude Include="..\..\include\Ishiko\UUIDs.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Ishiko\UUIDs\ErrorCategory.h">
+    <ClInclude Include="..\..\include\Ishiko\UUIDs\UUIDsErrorCategory.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\Ishiko\UUIDs\UUID.h">
@@ -40,7 +40,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\ErrorCategory.cpp">
+    <ClCompile Include="..\..\src\UUIDsErrorCategory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\UUID.cpp">
