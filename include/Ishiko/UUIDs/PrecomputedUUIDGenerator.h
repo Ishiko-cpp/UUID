@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2021 Xavier Leclercq
+    Copyright (c) 2021-2022 Xavier Leclercq
     Released under the MIT License
     See https://github.com/ishiko-cpp/uuids/blob/main/LICENSE.txt
 */
@@ -13,8 +13,6 @@
 #include <vector>
 
 namespace Ishiko
-{
-namespace UUIDs
 {
 
 class PrecomputedUUIDGenerator : public UUIDGenerator
@@ -31,7 +29,6 @@ private:
     size_t m_index;
 };
 
-}
 }
 
 #endif

@@ -77,12 +77,12 @@ ISHIKO_CPP_BOOST_ROOT ?= $(ISHIKO_CPP_THIRD_PARTY_BOOST)
 
 all: ../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoUUIDs-d,IshikoUUIDs).a
 
-../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoUUIDs-d,IshikoUUIDs).a: $(_builddir)IshikoUUIDs_ErrorCategory.o $(_builddir)IshikoUUIDs_UUID.o $(_builddir)IshikoUUIDs_UUIDVersion4Generator.o $(_builddir)IshikoUUIDs_PrecomputedUUIDGenerator.o
-	$(AR) rc $@ $(_builddir)IshikoUUIDs_ErrorCategory.o $(_builddir)IshikoUUIDs_UUID.o $(_builddir)IshikoUUIDs_UUIDVersion4Generator.o $(_builddir)IshikoUUIDs_PrecomputedUUIDGenerator.o
+../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoUUIDs-d,IshikoUUIDs).a: $(_builddir)IshikoUUIDs_UUIDsErrorCategory.o $(_builddir)IshikoUUIDs_UUID.o $(_builddir)IshikoUUIDs_UUIDVersion4Generator.o $(_builddir)IshikoUUIDs_PrecomputedUUIDGenerator.o
+	$(AR) rc $@ $(_builddir)IshikoUUIDs_UUIDsErrorCategory.o $(_builddir)IshikoUUIDs_UUID.o $(_builddir)IshikoUUIDs_UUIDVersion4Generator.o $(_builddir)IshikoUUIDs_PrecomputedUUIDGenerator.o
 	$(RANLIB) $@
 
-$(_builddir)IshikoUUIDs_ErrorCategory.o: ../../src/ErrorCategory.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I../../include/Ishiko/UUIDs -std=c++11 ../../src/ErrorCategory.cpp
+$(_builddir)IshikoUUIDs_UUIDsErrorCategory.o: ../../src/UUIDsErrorCategory.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I../../include/Ishiko/UUIDs -std=c++11 ../../src/UUIDsErrorCategory.cpp
 
 $(_builddir)IshikoUUIDs_UUID.o: ../../src/UUID.cpp
 	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I../../include/Ishiko/UUIDs -std=c++11 ../../src/UUID.cpp

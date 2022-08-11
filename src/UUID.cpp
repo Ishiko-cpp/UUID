@@ -9,10 +9,7 @@
 #include <boost/uuid/string_generator.hpp>
 #include <boost/uuid/uuid_io.hpp>
 
-namespace Ishiko
-{
-namespace UUIDs
-{
+using namespace Ishiko;
 
 UUID::UUID()
     : m_uuid(boost::uuids::nil_uuid())
@@ -54,11 +51,8 @@ std::string UUID::toString() const
     return boost::uuids::to_string(m_uuid);
 }
 
-std::ostream& operator<<(std::ostream& os, const UUID& uuid)
+std::ostream& Ishiko::operator<<(std::ostream& os, const UUID& uuid)
 {
     os << uuid.toString();
     return os;
-}
-
-}
 }
