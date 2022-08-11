@@ -22,9 +22,28 @@ const char* ErrorCategory::name() const noexcept
     return "Ishiko::UUIDs::ErrorCategory";
 }
 
-void Fail(ErrorCategory::EErrorValues value, Error& error) noexcept
+std::ostream& ErrorCategory::streamOut(int value, std::ostream& os) const
 {
-    error.fail(ErrorCategory::Get(), value);
+    switch (static_cast<Value>(value))
+    {
+    case Value::eGeneric:
+        os << "generic error";
+        break;
+
+    case Value::ePrecomputedUUIDListExhausted:
+        os << "precomputed UUID list exhausted";
+        break;
+
+    default:
+        os << "unknown value";
+        break;
+    }
+    return os;
+}
+
+void Fail(ErrorCategory::Value value, Error& error) noexcept
+{
+    error.fail(ErrorCategory::Get(), static_cast<int>(value));
 }
 
 }
