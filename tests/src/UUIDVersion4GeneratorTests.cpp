@@ -9,7 +9,6 @@
 #include <Ishiko/Errors.hpp>
 
 using namespace Ishiko;
-using namespace Ishiko::UUIDs;
 
 UUIDVersion4GeneratorTests::UUIDVersion4GeneratorTests(const TestNumber& number, const TestContext& context)
     : TestSequence(number, "UUIDVersion4Generator tests", context)

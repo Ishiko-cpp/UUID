@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2021 Xavier Leclercq
+    Copyright (c) 2021-2022 Xavier Leclercq
     Released under the MIT License
     See https://github.com/ishiko-cpp/uuids/blob/main/LICENSE.txt
 */
@@ -12,8 +12,6 @@
 #include <string>
 
 namespace Ishiko
-{
-namespace UUIDs
 {
 
 class UUID
@@ -37,7 +35,6 @@ private:
 
 std::ostream& operator<<(std::ostream& os, const UUID& uuid);
 
-}
 }
 
 #endif

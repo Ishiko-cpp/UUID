@@ -6,23 +6,20 @@
 
 #include "UUIDsErrorCategory.hpp"
 
-namespace Ishiko
-{
-namespace UUIDs
-{
+using namespace Ishiko;
 
-const ErrorCategory& ErrorCategory::Get() noexcept
+const UUIDsErrorCategory& UUIDsErrorCategory::Get() noexcept
 {
-    static ErrorCategory theCategory;
+    static UUIDsErrorCategory theCategory;
     return theCategory;
 }
 
-const char* ErrorCategory::name() const noexcept
+const char* UUIDsErrorCategory::name() const noexcept
 {
-    return "Ishiko::UUIDs::ErrorCategory";
+    return "Ishiko::UUIDsErrorCategory";
 }
 
-std::ostream& ErrorCategory::streamOut(int value, std::ostream& os) const
+std::ostream& UUIDsErrorCategory::streamOut(int value, std::ostream& os) const
 {
     switch (static_cast<Value>(value))
     {
@@ -41,10 +38,7 @@ std::ostream& ErrorCategory::streamOut(int value, std::ostream& os) const
     return os;
 }
 
-void Fail(ErrorCategory::Value value, Error& error) noexcept
+void Ishiko::Fail(UUIDsErrorCategory::Value value, Error& error) noexcept
 {
-    error.fail(ErrorCategory::Get(), static_cast<int>(value));
-}
-
-}
+    error.fail(UUIDsErrorCategory::Get(), static_cast<int>(value));
 }

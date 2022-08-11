@@ -11,10 +11,8 @@
 
 namespace Ishiko
 {
-namespace UUIDs
-{
 
-class ErrorCategory : public Ishiko::ErrorCategory
+class UUIDsErrorCategory : public ErrorCategory
 {
 public:
     enum class Value
@@ -23,18 +21,17 @@ public:
         ePrecomputedUUIDListExhausted = -2
     };
 
-    static const ErrorCategory& Get() noexcept;
+    static const UUIDsErrorCategory& Get() noexcept;
 
     const char* name() const noexcept override;
     std::ostream& streamOut(int value, std::ostream& os) const override;
 
 private:
-    ErrorCategory() noexcept = default;
+    UUIDsErrorCategory() noexcept = default;
 };
 
-void Fail(ErrorCategory::Value value, Error& error) noexcept;
+void Fail(UUIDsErrorCategory::Value value, Error& error) noexcept;
 
-}
 }
 
 #endif
