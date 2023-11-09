@@ -1,10 +1,10 @@
-ishikopath = envvar("ISHIKO_CPP");
+ishikopath = envvar("ISHIKO_CPP_ROOT");
 import $(ishikopath)/errors/include/Ishiko/Errors.bkl;
 
 setting ISHIKO_CPP_UUIDS_ROOT
 {
-    help = "Path to the Ishiko UUIDs installation";
-    default = '$(ISHIKO_CPP)/uuids';
+    help = "Path to the Ishiko/C++ UUIDs installation";
+    default = '$(ISHIKO_CPP_ROOT)/uuids';
 }
 
 template IshikoUUIDs : IshikoErrors
