@@ -28,7 +28,7 @@ UUID PrecomputedUUIDGenerator::generate(Error& error)
 {
     if (m_index == m_uuids.size())
     {
-        Fail(UUIDsErrorCategory::Value::ePrecomputedUUIDListExhausted, error);
+        Fail(UUIDsErrorCategory::Value::precomputed_uuid_list_exhausted, error);
         return UUID();
     }
     else

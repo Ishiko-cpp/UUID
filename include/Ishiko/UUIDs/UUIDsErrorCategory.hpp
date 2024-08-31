@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2021-2022 Xavier Leclercq
+    Copyright (c) 2021-2024 Xavier Leclercq
     Released under the MIT License
     See https://github.com/ishiko-cpp/uuids/blob/main/LICENSE.txt
 */
@@ -17,14 +17,14 @@ class UUIDsErrorCategory : public ErrorCategory
 public:
     enum class Value
     {
-        eGeneric = -1,
-        ePrecomputedUUIDListExhausted = -2
+        generic_error = -1,
+        precomputed_uuid_list_exhausted = -2
     };
 
     static const UUIDsErrorCategory& Get() noexcept;
 
     const char* name() const noexcept override;
-    std::ostream& streamOut(int value, std::ostream& os) const override;
+    const char* message(int ev, char* buffer, size_t len) const noexcept override;
 
 private:
     UUIDsErrorCategory() noexcept = default;
