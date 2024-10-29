@@ -17,7 +17,7 @@ jobs:
           path: /workspace/projects/ishiko/cpp/uuids
       - run:
           name: Build
-          command: cd /workspace/projects/ishiko/cpp/uuids/build/gnumake && make
+          command: cd /workspace/projects/ishiko/cpp/uuids/build-files/gnumake && make
       - run:
           name: "Install test dependency: Ishiko/C++ Memory"
           command: cd /workspace/projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/memory.git && cd memory/build-files/gnumake && make
@@ -56,10 +56,10 @@ jobs:
           command: cd /workspace/projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/test-framework.git && cd test-framework/core/build-files/gnumake && make
       - run:
           name: Test build
-          command: cd /workspace/projects/ishiko/cpp/uuids/tests/build/gnumake && make
+          command: cd /workspace/projects/ishiko/cpp/uuids/tests/build-files/gnumake && make
       - run:
           name: Run the tests
-          command: cd /workspace/projects/ishiko/cpp/uuids/tests/build/gnumake && ./IshikoUUIDsTests
+          command: cd /workspace/projects/ishiko/cpp/uuids/tests/build-files/gnumake && ./IshikoUUIDsTests
 workflows:
   version: 2
   continuous_build:
